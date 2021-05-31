@@ -34,3 +34,5 @@ create table board(
     foreign key (m_pk) references member(m_pk),
     foreign key (mu_pk) references military_unit(mu_pk)
 );
+--
+--
