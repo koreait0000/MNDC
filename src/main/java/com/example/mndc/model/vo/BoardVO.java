@@ -1,4 +1,4 @@
-package com.example.mndc.controller;
+package com.example.mndc.model.vo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,8 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BoardVO {
-    private int b_pk;
     private String b_title;
+    private int b_pk;
     private String b_ctnt;
     private String b_regdt;
     private int b_like;
