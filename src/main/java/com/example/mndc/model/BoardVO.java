@@ -1,4 +1,4 @@
-package com.example.mndc.controller;
+package com.example.mndc.model;
 
 import lombok.Getter;
 import lombok.Setter;
