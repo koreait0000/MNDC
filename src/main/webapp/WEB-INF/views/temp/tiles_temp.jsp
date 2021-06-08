@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-    <tiles:insertAttribute name="header"/>
+        <tiles:insertAttribute name="header"/>
     </header>
     <main>
         <tiles:insertAttribute name="content"/>

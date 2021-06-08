@@ -21,10 +21,8 @@ public class MybatisConfig {
         sqlSessionFactory.setDataSource(dataSource);
         sqlSessionFactory.setTypeAliasesPackage("com.example.mndc.model.vo");
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-
         return  sqlSessionFactory.getObject();
     }
-
     @Bean
     public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception{
         return new SqlSessionTemplate(sqlSessionFactory);

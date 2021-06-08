@@ -30,7 +30,7 @@ public class MemberVO {
     private final static String CLIENT_ID = "HUlPJQ3woHNacSAPETZg";
     private final static String CLIENT_SECRET="UDPdHO0ViQ";
     //로그인 인증 결과를 받을 콜백주소
-    private final static String REDIRECT_URI = "http://localhost:8080/user/callback";
+    private final static String REDIRECT_URI = "http://localhost:8090/user/callback";
     //애플리케이션이 생성한 상태 토큰??
     private final static String SESSION_STATE = "oauth_state";
     private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
