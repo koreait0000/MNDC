@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-${result.message}
+<h1>인증을 실패하였습니다.</h1>
 </body>
 </html>

@@ -1,4 +1,4 @@
-                                                                                                                                    package com.example.mndc.controller;
+package com.example.mndc.controller;
 
 import com.example.mndc.model.vo.ApiResult;
 import com.example.mndc.model.vo.MemberVO;
