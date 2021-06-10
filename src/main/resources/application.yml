@@ -13,8 +13,14 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  security:
-    oauth2:
-      client:
-        registration:
+  profiles:
+    include: oauth
 
+custom:
+  oauth2:
+    kakao:
+      client-id: c8c2eb353479ec0dcab44444610489f0
+      client-secret: X0DNMUsl2eqYSTO3gU1EszKBQgskbap7
+    naver:
+      client-id: HUlPJQ3woHNacSAPETZg
+      client-secret: UDPdHO0ViQ
