@@ -1,7 +1,7 @@
 # MNDC
 
 팀원 이메일
-gusals9355@naver.com
+gusals9355@naver.com</br>
 dksms1@naver.com
 
 
@@ -20,7 +20,7 @@ dksms1@naver.com
 6. 기타
 
 ## 개요
-
+   -수직적 상호체계인 군 조직에서 문제점을 해결하기 위한 수평적 상호체계인 군 커뮤니티 사이트
 ## 적절성
 
 ## 독창성
