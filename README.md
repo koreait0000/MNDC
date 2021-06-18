@@ -2,6 +2,7 @@
 
 팀원 이메일
 gusals9355@naver.com
+dksms1@naver.com
 
 
 ## index
