@@ -1,4 +1,4 @@
-# MNDC
+# ALMOND
 
 팀원 이메일
 gusals9355@naver.com
