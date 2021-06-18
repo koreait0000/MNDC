@@ -77,7 +77,5 @@ dksms1@naver.com
 </p>
  
 
-https://user-images.githubusercontent.com/65203794/122523414-f538c980-d051-11eb-9024-39892fd0e9a6.mp4
-
 ![KakaoTalk_20210618_162033209](https://user-images.githubusercontent.com/65203794/122523431-f8cc5080-d051-11eb-8ab5-a682f5a929ea.gif)
 
