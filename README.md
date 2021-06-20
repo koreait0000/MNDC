@@ -78,4 +78,7 @@ dksms1@naver.com
  
 ## 인트로영상<br>
 ![KakaoTalk_20210618_162033209](https://user-images.githubusercontent.com/65203794/122523431-f8cc5080-d051-11eb-8ab5-a682f5a929ea.gif)
+   
+## 로고<br>
+![레이어 1](https://user-images.githubusercontent.com/81272766/122691358-2e4b8680-d26a-11eb-925d-cbaf4ad81309.png)
 
