@@ -1,6 +1,13 @@
+coolsms:
+  key: NCSFNGQWT6LR7VI3
+  secret: WNSHSGKRJND0KRVVOIJXPUK2SHNS4ESA
 server:
   port: 8090
   context-path: /
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  type-aliases-package: com.example.mndc
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
@@ -9,13 +16,13 @@ spring:
     password: root
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요
 #TODO : 및 DB에 계정 생성 및 권한 부여 필요
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
-  profiles:
-    include: oauth
-
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 6e5cfa586a0a21f7dd92
+            client-secret: 49bfab2268b591a7bc12a292fc054dc0b1e5a2dc
 custom:
   oauth2:
     kakao:
