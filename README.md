@@ -1,7 +1,7 @@
 # ALMOND
 
-팀원 이메일
-gusals9355@naver.com
+팀원 이메일<br>
+gusals9355@naver.com<br>
 dksms1@naver.com
 
 
