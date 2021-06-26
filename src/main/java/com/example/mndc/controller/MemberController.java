@@ -1,6 +1,6 @@
                                                                                                                                     package com.example.mndc.controller;
 
-import com.example.mndc.model.vo.MemberVO;
+import com.example.mndc.model.dto.MemberDTO;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +18,11 @@ import java.io.IOException;
 @RequestMapping("/user/*")
 public class MemberController {
 
-    private MemberVO memberVO;
+    private MemberDTO memberVO;
     private String apiResult = null;
 
     @Autowired
-    private void setNaverLoginvo(MemberVO memberVO) {
+    private void setNaverLoginvo(MemberDTO memberVO) {
         this.memberVO = memberVO;
     }
 

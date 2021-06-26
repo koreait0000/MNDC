@@ -1,4 +1,4 @@
-package com.example.mndc.model.vo;
+package com.example.mndc.model.dto;
 
 import com.example.mndc.utils.NaverLoginApi;
 import com.github.scribejava.core.builder.ServiceBuilder;
@@ -7,11 +7,6 @@ import com.github.scribejava.core.model.OAuthRequest;
 import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
-import com.github.scribejava.core.oauth.OAuthService;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -20,7 +15,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Component
-public class MemberVO {
+public class MemberDTO {
 //    private int m_pk;
 //    private String m_id;
 //    private String m_pw;

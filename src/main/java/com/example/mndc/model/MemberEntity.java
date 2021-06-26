@@ -5,10 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MemberVO {
+public class MemberEntity {
     private int m_pk;
     private String m_id;
     private String m_pw;
+    private String m_nm;
     private int m_type;
     private int m_auth;
     private int mu_pk;

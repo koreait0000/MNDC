@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BoardVO {
+public class BoardEntity {
     private int b_pk;
     private String b_title;
     private String b_ctnt;
