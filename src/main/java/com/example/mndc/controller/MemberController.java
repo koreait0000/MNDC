@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
-                                                                                                                                    @Controller
+//TODO : 참전용사 기부 관련 링크 생성하기
+@Controller
 @RequestMapping("/user/*")
 public class MemberController {
 
