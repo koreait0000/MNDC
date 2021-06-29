@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+    <select id="selectAllInfoByUnit" resultType="BoardDTO">
+        select b.*,m.m_nm from board b
+        inner join member m
+        on m.m_pk = b.m_pk
+        where b.mu_pk = #{mu_pk}
+    </select>
+</mapper>
