@@ -137,3 +137,58 @@ kimsw3445@naver.com
 ## 로고<br>
 ![레이어 1](https://user-images.githubusercontent.com/81272766/122691358-2e4b8680-d26a-11eb-925d-cbaf4ad81309.png)
 
+## 팀 정보<br>
+<table width="788">
+<thead>
+<tr>
+<th width="100" align="center">사진</th>
+<th width="100" align="center">성명</th>
+<th width="150" align="left">담당</th>
+<th width="100" align="center">깃허브</th>
+<th width="175" align="center">이메일</th>
+</tr> 
+</thead>
+<tbody>
+<tr>
+<td width="100" align="center"><img src="/image/PROFILE1.png" width="60" height="60"></td>
+<td width="100" align="center">이준형</td>
+<td width="150">프론트엔드 개발<br>서버 환경 구축<br>영상 작업 등</td>
+
+<td width="100" align="center">
+	<a href="https://github.com/hyung000620">
+		<img src="http://img.shields.io/badge/hyung000620-655ced?style=social&logo=github"/>
+	</a>
+</td>
+<td width="175" align="center">
+	<a href="mailto:dksms78@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=dksms78@gmail.com&color=orange&style=flat-square&logo=gmail"></a>
+	</td>
+</tr>
+<tr>
+<td width="100" align="center"><img src="/image/PROFILE2.png" width="60" height="60"></td>
+<td width="100" align="center">김성욱</td>
+<td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
+<td width="100" align="center">
+	<a href="https://github.com/LiiNen">
+		<img src="http://img.shields.io/badge/LiiNen-655ced?style=social&logo=github"/>
+	</a>
+</td>
+<td width="175" align="center">
+	<a href="mailto:kimsw3445@naver.com"><img src="https://img.shields.io/static/v1?label=&message=kimsw3445@naver.com&color=green&style=flat-square&logo=gmail"></a>
+	</td>
+</tr>
+    <tr>
+<td width="100" align="center"><img src="/image/PROFILE2.png" width="60" height="60"></td>
+<td width="100" align="center">조현민</td>
+<td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
+<td width="100" align="center">
+	<a href="https://github.com/LiiNen">
+		<img src="http://img.shields.io/badge/LiiNen-655ced?style=social&logo=github"/>
+	</a>
+</td>
+<td width="175" align="center">
+	<a href="mailto:gusals9355@naver.com"><img src="https://img.shields.io/static/v1?label=&message=gusals9355@naver.com&color=green&style=flat-square&logo=gmail"></a>
+	</td>
+</tr>
+</tr>
+</tbody>
+</table>
