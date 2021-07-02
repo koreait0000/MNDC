@@ -168,8 +168,8 @@ kimsw3445@naver.com
 <td width="100" align="center">김성욱</td>
 <td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
 <td width="100" align="center">
-	<a href="https://github.com/LiiNen">
-		<img src="http://img.shields.io/badge/LiiNen-655ced?style=social&logo=github"/>
+	<a href="https://github.com/Kimsw-G">
+		<img src="http://img.shields.io/badge/Kimsw-655ced?style=social&logo=github"/>
 	</a>
 </td>
 <td width="175" align="center">
@@ -181,8 +181,8 @@ kimsw3445@naver.com
 <td width="100" align="center">조현민</td>
 <td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
 <td width="100" align="center">
-	<a href="https://github.com/LiiNen">
-		<img src="http://img.shields.io/badge/LiiNen-655ced?style=social&logo=github"/>
+	<a href="https://github.com/gusals9355">
+		<img src="http://img.shields.io/badge/gusals9355-655ced?style=social&logo=github"/>
 	</a>
 </td>
 <td width="175" align="center">
