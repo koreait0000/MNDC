@@ -1,11 +1,4 @@
 # ALMOND
-
-팀원 이메일  
-gusals9355@naver.com  
-dksms1@naver.com  
-kimsw3445@naver.com
-
-
 ## 목차
 1. [개요](#chapter1)
     - 서비스 요약
@@ -31,6 +24,10 @@ kimsw3445@naver.com
 군 조직의 경우에도 예외는 아니며 의사소통은 중요하다. 하지만 수직적 상호 체계인 군 조직에서는
 그러한 의사소통이 많이 결여되어 있다고 볼 수 있다.  
 그렇기에 의사소통을 중점적으로 할 수 있는 서비스가 필요하다.
+### Flow Chart
+![플로우차트](https://user-images.githubusercontent.com/81272766/124402730-0fbab480-dd6d-11eb-97ce-2a06985f4cf0.png)
+### 2021년 6월에 ALMOND에서 실시한 군대에 대한 인식 설문조사
+![설문조사](https://user-images.githubusercontent.com/81272766/124402782-63c59900-dd6d-11eb-8c13-6c7594248e03.png)
 ## 독창성<a id="chapter3"></a>
 ### <디시인사이드 군인 관련 갤러리>
 - 장점 : 국내에서 큰 규모의 게시판 답게 다양한 정보들을 제공하며, 이용자 수가 많다.
