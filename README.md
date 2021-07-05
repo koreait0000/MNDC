@@ -1,4 +1,8 @@
 # ALMOND
+
+<a href="https://www.youtube.com/watch?v=DTD8mx3fMaE">![화면 캡처 2021-07-05 114443](https://user-images.githubusercontent.com/81272766/124412082-b3fe2480-dd88-11eb-8e82-1511b80cb38f.png)
+</a>
+
 ## 목차
 1. [개요](#chapter1)
     - 서비스 요약
