@@ -4,9 +4,7 @@
 <html lang="ko">
 <head>
     <title>ALMOND</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head> yet implemented
+</head>
 <body id="top">
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('/img/demo/애국 사진.png');">
@@ -49,7 +47,8 @@
         <header id="header" class="hoc clear">
             <div id="logo" class="fl_left">
                 <!-- ################################################################################################ -->
-                <img class="imgLogoSize" src="images/demo/로고.png"></img><h1><a href="index.html">ALMOND</a></h1>
+                <img class="imgLogoSize" src="/img/demo/로고.png"></img>
+                <h1><a href="index.html">ALMOND</a></h1>
                 <!-- ################################################################################################ -->
             </div>
             <nav id="mainav" class="fl_right">
@@ -117,7 +116,7 @@
         <section id="introblocks">
             <ul class="nospace group btmspace-80">
                 <li class="one_third first">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="images/demo/육군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/육군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">육군</h6>
                             <p>대한민국 국군 중 지상을 담당하는 군사조직, 3군 중 가장 큰 비중을 차지한다. 한국 육군의 기원은 임시정부의 광복군이다.</p>
@@ -125,7 +124,7 @@
                     </figure>
                 </li>
                 <li class="one_third">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="images/demo/해군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/해군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">해군</h6>
                             <p>대한민국 해군은 해상작전을 주 임무로 하는 대한민국 국군의 조직으로, 상륙작전을 주 임무로 하는 해병대를 예하에 두고 있다.</p>
@@ -133,7 +132,7 @@
                     </figure>
                 </li>
                 <li class="one_third">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="images/demo/공군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/공군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">공군</h6>
                             <p>대한민국 공군은 대한민국의 영공 방위를 책임지는 대한민국 국군의 공군이다.</p>
@@ -156,7 +155,8 @@
                         <div class="clear"><a href="#"><i class="fas fa-tape"></i></a>
                             <h6 class="heading">Efficitur auctor</h6>
                         </div>
-                        <p>Cras dui ac pretium egestas nunc maecenas scelerisque leo eget enim interdum at vulputate lorem pretium in.</p>
+                        <p>Cras dui ac pretium egestas nunc maecenas scelerisque leo eget enim interdum at vulputate
+                            lorem pretium in.</p>
                     </article>
                 </li>
                 <li class="one_third">
@@ -164,7 +164,8 @@
                         <div class="clear"><a href="#"><i class="fas fa-table-tennis"></i></a>
                             <h6 class="heading">Tempor aliquam</h6>
                         </div>
-                        <p>Sagittis arcu a magna eget cursus lacus consectetur proin imperdiet bibendum elit id molestie ipsum ut tellus.</p>
+                        <p>Sagittis arcu a magna eget cursus lacus consectetur proin imperdiet bibendum elit id molestie
+                            ipsum ut tellus.</p>
                     </article>
                 </li>
                 <li class="one_third">
@@ -172,7 +173,8 @@
                         <div class="clear"><a href="#"><i class="fas fa-people-carry"></i></a>
                             <h6 class="heading">Metus convallis</h6>
                         </div>
-                        <p>Orci blandit ac mauris ac gravida maximus nulla curabitur convallis massa sed urna placerat sed tempor velit.</p>
+                        <p>Orci blandit ac mauris ac gravida maximus nulla curabitur convallis massa sed urna placerat
+                            sed tempor velit.</p>
                     </article>
                 </li>
             </ul>
@@ -194,22 +196,22 @@
         </div>
         <ul class="nospace group team">
             <li class="one_quarter first">
-                <figure><a class="imgover" href="#"><img src="images/demo/300x300.png" alt=""></a>
+                <figure><a class="imgover" href="#"><img src="/img/demo/300x300.png" alt=""></a>
                     <figcaption><strong>사단이름</strong> <em>부대이름</em></figcaption>
                 </figure>
             </li>
             <li class="one_quarter">
-                <figure><a class="imgover" href="#"><img src="images/demo/300x300.png" alt=""></a>
+                <figure><a class="imgover" href="#"><img src="/img/demo/300x300.png" alt=""></a>
                     <figcaption><strong>사단이름</strong> <em>부대이름</em></figcaption>
                 </figure>
             </li>
             <li class="one_quarter">
-                <figure><a class="imgover" href="#"><img src="images/demo/300x300.png" alt=""></a>
+                <figure><a class="imgover" href="#"><img src="/img/demo/300x300.png" alt=""></a>
                     <figcaption><strong>사단이름</strong> <em>부대이름</em></figcaption>
                 </figure>
             </li>
             <li class="one_quarter">
-                <figure><a class="imgover" href="#"><img src="images/demo/300x300.png" alt=""></a>
+                <figure><a class="imgover" href="#"><img src="/img/demo/300x300.png" alt=""></a>
                     <figcaption><strong>사단이름</strong> <em>부대이름</em></figcaption>
                 </figure>
             </li>
@@ -218,14 +220,14 @@
     </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper bgded" style="background-image:url('images/demo/soldiers-311384_1280.png');">
+<div class="wrapper bgded" style="background-image:url('/img/demo/soldiers-311384_1280.png');">
     <section id="testimonials" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="one_half overlay">
             <ul class="nospace">
                 <li>
                     <blockquote>수직적 상호체계인 군 조직에서 문제점을 해결하기 위한 수평적 상호체계인 군 커뮤니티 사이트입니다</blockquote>
-                    <figure class="clear"><img class="circle" src="images/demo/60x60.png\" alt="">
+                    <figure class="clear"><img class="circle" src="/img/demo/60x60.png\" alt="">
                         <figcaption>
                             <h6 class="heading">ALMOND</h6>
                             <em>CEO / DDANG-KONG</em></figcaption>
@@ -240,7 +242,7 @@
     </section>
 </div>
 <!-- ################################################################################################ -->
-<div class="bgded overlay row4" style="background-image:url('images/demo/애국 사진2.png');">
+<div class="bgded overlay row4" style="background-image:url('/img/demo/애국 사진2.png');">
     <footer id="footer" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="center btmspace-50">
@@ -262,16 +264,20 @@
         <div id="ctdetails" class="clear">
             <ul class="nospace clear">
                 <li class="one_quarter first">
-                    <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
+                    <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a>
+                        <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
                 </li>
                 <li class="one_quarter">
-                    <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></div>
+                    <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span>
+                    </div>
                 </li>
                 <li class="one_quarter">
-                    <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Monday - Saturday:</strong> 08.00am - 18.00pm</span></div>
+                    <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Monday - Saturday:</strong> 08.00am - 18.00pm</span>
+                    </div>
                 </li>
                 <li class="one_quarter">
-                    <div class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></div>
+                    <div class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a
+                            href="#">our location</a></span></div>
                 </li>
             </ul>
         </div>
@@ -283,15 +289,16 @@
     <div id="copyright" class="hoc clear">
         <!-- ################################################################################################ -->
         <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-        <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+        <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/"
+                                           title="Free Website Templates">OS Templates</a></p>
         <!-- ################################################################################################ -->
     </div>
 </div>
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.backtotop.js"></script>
+<script src="/js/jquery.mobilemenu.js"></script>
 </body>
 </html>
