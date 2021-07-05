@@ -29,4 +29,17 @@
         delete from board
         where b_pk = #{b_pk}
     </delete>
+    <select id="selectAllInfoByMPk" resultType="BoardDTO">
+        select a.* from
+        (select b.*, mu.mu_name from board b
+        inner join military_unit mu
+        on mu.mu_pk = b.mu_pk
+        where b.m_pk = #{m_pk}) a
+        inner join member m
+        on m.m_pk = a.m_pk
+    </select>
+    <select id="selectAllCmtByMPk" resultType="CmtEntity">
+        select * from cmt
+        where m_pk = #{m_pk}
+    </select>
 </mapper>

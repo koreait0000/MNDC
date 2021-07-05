@@ -1,6 +1,5 @@
 package com.example.mndc.controller;
 
-import com.example.mndc.model.BoardEntity;
 import com.example.mndc.model.dto.BoardDTO;
 import com.example.mndc.model.dto.MilitaryUnitDTO;
 import com.example.mndc.service.BoardService;
@@ -49,7 +48,7 @@ public class BoardController {
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
-        model.addAttribute("board",boardService.getBoard(b_pk));
+        model.addAttribute("board",boardService.getBoardInfo(b_pk));
         return "/board/view";
     }
     // 글쓰기
@@ -69,7 +68,7 @@ public class BoardController {
     public String modifyBoard(@RequestParam int b_pk,
                               Model model){
         // TODO : 필터를 통해 로그인이 안 됐을시 접근 제어. 작성자인지 확인하기
-        model.addAttribute("board",boardService.getBoard(b_pk));
+        model.addAttribute("board",boardService.getBoardInfo(b_pk));
         return "/board/modify";
     }
     @PostMapping("/modify")
@@ -84,7 +83,7 @@ public class BoardController {
         boardService.deleteBoard(boardDTO);
         return "redirect:/list";
     }
-
-
-
+    
+    // TODO : 추천버튼
+    // TODO :
 }

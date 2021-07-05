@@ -15,7 +15,6 @@ create table member(
     m_id varchar(20) not null,
     m_pw varchar(60) not null,
     m_nm varchar(10) not null unique,
-    /* TODO : 닉네임 추가했습니다. 회원가입 및 프로필 설정에서 닉네임 변경,등록 추가해주세요.ENtity 수정은 했습니다*/
     m_type int(1) check(m_type in(1,2,3)),
     m_auth int(1) check(m_auth in(1,2,3)),
     mu_pk int,
@@ -29,7 +28,7 @@ create table board(
     b_regdt date default now(),
     b_like int default 0,
     b_view int default 0,
-    b_type int default 0,
+    b_type int default 0 comment '0: 공지, 1: 일반, 2: 맛집, 3:정보, ',
 
     m_pk int,
     mu_pk int,
@@ -37,6 +36,17 @@ create table board(
     foreign key (mu_pk) references military_unit(mu_pk)
 );
 
+create table cmt(
+    c_pk int AUTO_INCREMENT primary key,
+    c_ctnt varchar(100) not null,
+    c_regdt date default now(),
+    c_name int,
+
+    b_pk int not null,
+    m_pk int not null,
+    foreign key (b_pk) references board(b_pk),
+    foreign key (m_pk) references member(m_pk)
+)
 
 --
 --
