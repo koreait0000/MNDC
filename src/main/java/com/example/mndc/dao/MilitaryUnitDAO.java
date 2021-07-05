@@ -9,4 +9,5 @@ import java.util.List;
 public interface MilitaryUnitDAO {
     List<MilitaryUnitEntity> selectAllInfoByType(int type);
 
+
 }

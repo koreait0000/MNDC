@@ -18,10 +18,26 @@ public class BoardService {
     @Autowired
     BoardDAO boardDAO;
 
+    private final int PAGE_ROW = 15;
+
     public List<MilitaryUnitEntity> getUnitInfo(int type){
         return militaryUnitDAO.selectAllInfoByType(type);
     }
-    public List<BoardDTO> getBoardInfo(int mu_pk){
-        return boardDAO.selectAllInfoByUnit(mu_pk);
+    public List<BoardDTO> getBoardsInfo(int mu_pk,int page){
+        int begin = (page-1)*PAGE_ROW;
+        int end = page*PAGE_ROW;
+        return boardDAO.selectAllInfoByUnit(mu_pk,begin,end);
+    }
+    public BoardDTO getBoard(int b_pk){
+        return boardDAO.selectInfoByBPk(b_pk);
+    }
+    public int writeBoard(BoardDTO boardDTO){
+        return boardDAO.insertBoard(boardDTO);
+    }
+    public int modifyBoard(BoardDTO boardDTO){
+        return boardDAO.updateBoard(boardDTO);
+    }
+    public int deleteBoard(BoardDTO boardDTO){
+        return boardDAO.deleteBoard(boardDTO);
     }
 }

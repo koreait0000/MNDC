@@ -7,5 +7,26 @@
         inner join member m
         on m.m_pk = b.m_pk
         where b.mu_pk = #{mu_pk}
+        limit #{begin}, #{end}
     </select>
+    <select id="selectInfoByBPk" resultType="BoardDTO">
+        select b.*,m.m_nm from board b
+        inner join member m
+        on m.m_pk = b.m_pk
+        where b.b_pk = #{b_pk}
+    </select>
+    <insert id="insertBoard">
+        insert into board (b_title, b_ctnt, b_type, m_pk, mu_pk)
+        value (#{b_title},#{b_ctnt},#{b_type},#{m_pk},#{mu_pk})
+    </insert>
+    <update id="updateBoard">
+        update board
+        set b_title = #{b_title}
+        ,b_ctnt = #{b_ctnt}
+        where b_pk = #{b_pk}
+    </update>
+    <delete id="deleteBoard">
+        delete from board
+        where b_pk = #{b_pk}
+    </delete>
 </mapper>

@@ -1,6 +1,6 @@
 use mndc;
-insert into military_unit
-values(mu_name,mu_type)
+insert into military_unit(mu_name,mu_type)
+values
 /*공군본부*/
 ('공군본부',3),
 /**/('제35비행전대',3),
