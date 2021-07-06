@@ -42,4 +42,8 @@
         select * from cmt
         where m_pk = #{m_pk}
     </select>
+    <select id="selectAllInfoBySearch" resultType="BoardEntity">
+        select * from board
+        WHERE b_title LIKE '%${search}%'
+    </select>
 </mapper>

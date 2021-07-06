@@ -55,4 +55,11 @@ public class BoardService {
         // 게시물 지우기
         return boardDAO.deleteBoard(boardDTO);
     }
+    public List<BoardEntity> searchBoard(String search){
+        return boardDAO.selectAllInfoBySearch(search);
+    }
+    public List<MilitaryUnitEntity> searchMilitaryUnit(String search){
+        return militaryUnitDAO.selectAllInfoBySearch(search);
+    }
+
 }
