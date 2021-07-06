@@ -22,7 +22,7 @@ public class MybatisConfig {
         sqlSessionFactory.setTypeAliasesPackage("com.example.mndc.model");
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
 
-        return  sqlSessionFactory.getObject();
+        return sqlSessionFactory.getObject();
     }
 
     @Bean
