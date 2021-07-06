@@ -1,13 +1,13 @@
-package com.example.mndc.model.vo;
+package com.example.mndc.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class BoardVO {
-    private String b_title;
+public class BoardEntity {
     private int b_pk;
+    private String b_title;
     private String b_ctnt;
     private String b_regdt;
     private int b_like;

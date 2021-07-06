@@ -3,22 +3,21 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/common.css">
-<%--    <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">--%>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
     <header>
         <tiles:insertAttribute name="header"/>
     </header>
     <main>
-        <tiles:insertAttribute name="content">
-        </tiles:insertAttribute>
+        <tiles:insertAttribute name="content"/>
     </main>
     <footer>
         <tiles:insertAttribute name="footer"/>
     </footer>
-<%--<script src="/js/<tiles:getAsString name="js"/>.js"></script>--%>
 <script src="/js/common.js"></script>
 </body>
 </html>

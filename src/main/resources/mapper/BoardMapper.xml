@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO">
+    <select id="selectAllInfoByUnit" resultType="BoardDTO">
+        select b.*,m.m_nm from board b
+        inner join member m
+        on m.m_pk = b.m_pk
+        where b.mu_pk = #{mu_pk}
+        limit #{begin}, #{end}
+    </select>
+    <select id="selectInfoByBPk" resultType="BoardDTO">
+        select b.*,m.m_nm from board b
+        inner join member m
+        on m.m_pk = b.m_pk
+        where b.b_pk = #{b_pk}
+    </select>
+    <insert id="insertBoard">
+        insert into board (b_title, b_ctnt, b_type, m_pk, mu_pk)
+        value (#{b_title},#{b_ctnt},#{b_type},#{m_pk},#{mu_pk})
+    </insert>
+    <update id="updateBoard">
+        update board
+        set b_title = #{b_title}
+        ,b_ctnt = #{b_ctnt}
+        where b_pk = #{b_pk}
+    </update>
+    <delete id="deleteBoard">
+        delete from board
+        where b_pk = #{b_pk}
+    </delete>
+    <select id="selectAllInfoByMPk" resultType="BoardDTO">
+        select a.* from
+        (select b.*, mu.mu_name from board b
+        inner join military_unit mu
+        on mu.mu_pk = b.mu_pk
+        where b.m_pk = #{m_pk}) a
+        inner join member m
+        on m.m_pk = a.m_pk
+    </select>
+    <select id="selectAllCmtByMPk" resultType="CmtEntity">
+        select * from cmt
+        where m_pk = #{m_pk}
+    </select>
+    <select id="selectAllInfoBySearch" resultType="BoardEntity">
+        select * from board
+        WHERE b_title LIKE '%${search}%'
+    </select>
+</mapper>
