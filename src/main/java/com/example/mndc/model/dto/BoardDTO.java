@@ -8,4 +8,5 @@ import lombok.Setter;
 @Setter
 public class BoardDTO extends BoardEntity {
     private String m_nm;
+    private String mu_name;
 }
