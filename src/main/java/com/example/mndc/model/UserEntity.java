@@ -23,7 +23,7 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
     @Column(nullable = false)
-    private String PhoneNum;
+    private String phoneNum;
     @Column(nullable = false)
     private String name;
     private String nickname;
@@ -37,14 +37,19 @@ public class UserEntity {
     @CreationTimestamp
     private Timestamp reg_dt;
 
-//    @Builder
-//    public UserEntity(String username, String pw, String email, String role, String provider, String providerId, Timestamp reg_dt) {
-//        this.username=username;
-//        this.pw=pw;
-//        this.email=email;
-//        this.role=role;
-//        this.provider=provider;
-//        this.providerId=providerId;
-//        this.reg_dt=reg_dt;
-//    }
+    @Builder
+    public UserEntity(String id, String pw, String email, String phoneNum, String name, String nickname, String birth, String gender, String role, String provider, String providerId, Timestamp reg_dt) {
+        this.id=id;
+        this.pw=pw;
+        this.email=email;
+        this.phoneNum = phoneNum;
+        this.name = name;
+        this.nickname = nickname;
+        this.birth = birth;
+        this.gender = gender;
+        this.role=role;
+        this.provider=provider;
+        this.providerId=providerId;
+        this.reg_dt=reg_dt;
+    }
 }
