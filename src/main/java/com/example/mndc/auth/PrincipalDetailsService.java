@@ -21,7 +21,6 @@ public class PrincipalDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String id /*로그인 폼의 name값을 username이랑 동일하게 해야함*/) throws UsernameNotFoundException {
         UserEntity userEntity = userRepository.findById(id);
-        System.out.println(userEntity);
         if(userEntity != null ){
             return new PrincipalDetails(userEntity);
         }

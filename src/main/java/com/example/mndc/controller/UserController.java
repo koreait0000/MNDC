@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -21,12 +20,12 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(){
-        return "user/login";
+        return "login";
     }
 
     @GetMapping("/join")
     public String join(){
-        return "user/join";
+        return "join";
     }
     @PostMapping("/join")
     public String join(UserEntity userEntity){
@@ -37,6 +36,6 @@ public class UserController {
             userRepository.save(userEntity);
             return "redirect:login";
         }
-        return "user/join";
+        return "join";
     }
 }
