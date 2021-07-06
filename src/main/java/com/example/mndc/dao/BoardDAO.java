@@ -17,4 +17,5 @@ public interface BoardDAO {
     int deleteBoard(BoardDTO boardDTO);
     List<BoardDTO> selectAllInfoByMPk(int m_pk);
     List<CmtEntity> selectAllCmtByMPk(int m_pk);
+    List<BoardEntity> selectAllInfoBySearch(String search);
 }

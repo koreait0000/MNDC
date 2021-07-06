@@ -4,7 +4,11 @@
 <mapper namespace="MilitaryUnitDAO">
 
     <select id="selectAllInfoByType" resultType="MilitaryUnitEntity">
-        select * from militaryUnit
+        select * from military_unit
         where mu_type = #{type}
+    </select>
+    <select id="selectAllInfoBySearch" resultType="MilitaryUnitEntity">
+        select * from military_unit
+        WHERE mu_name LIKE '%${search}%'
     </select>
 </mapper>
