@@ -1,4 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
+<!--TODO: jsp에서 시큐리티값 가져오기 ㄱㄱ!-->
+<sec:authorize access="isAuthenticated()">
+    <sec:authentication property="principal.userEntity.nickname"/>
+</sec:authorize>
 <div>
     <form method="post" action="/join" id="form">
         <div>아이디</div>

@@ -1,6 +1,5 @@
 package com.example.mndc.controller;
 
-
 import com.example.mndc.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.mndc.auth.PrincipalDetails;
@@ -20,13 +19,9 @@ public class MainController {
     BoardService boardService;
 
     @GetMapping("/")
-    public String tilesTest(@AuthenticationPrincipal PrincipalDetails principalDetails) {
-        UserEntity entity = principalDetails.getUserEntity();
-        System.out.println(entity);
+    public String tilesTest() {
         return "/index";
     }
-//t
-
 
     @PostMapping("/search")
     public String search(@RequestParam String search,

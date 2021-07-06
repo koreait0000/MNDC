@@ -1,3 +1,7 @@
+coolsms:
+  key: NCSFNGQWT6LR7VI3
+  secret: WNSHSGKRJND0KRVVOIJXPUK2SHNS4ESA
+
 server:
   port: 8090
   context-path: /
@@ -6,12 +10,16 @@ server:
     enabled: true
     force: true
 
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  type-aliases-package: com.example.mndc
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3308/mndc
+    url: jdbc:mysql://localhost:3306/mndc
     username: root
-    password: koreait
+    password: root
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요
 #TODO : 및 DB에 계정 생성 및 권한 부여 필요
   mvc:
@@ -50,7 +58,7 @@ spring:
               - email
             client-name: Naver
             authorization-grant-type: authorization_code
-            redirect_uri: http://localhost:8080/login/oauth2/code/naver
+            redirect_uri: http://localhost:8090/login/oauth2/code/naver
 
         provider:
           naver:
