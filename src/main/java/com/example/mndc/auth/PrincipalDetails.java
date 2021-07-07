@@ -27,7 +27,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         this.userEntity = userEntity;
     }
     //oauth로그인
-
     public PrincipalDetails(UserEntity userEntity, Map<String, Object> attributes){
         this.userEntity = userEntity;
         this.attributes = attributes;
