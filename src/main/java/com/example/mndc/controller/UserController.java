@@ -25,23 +25,24 @@ public class UserController {
 
     @GetMapping("/join")
     public String join(@AuthenticationPrincipal PrincipalDetails principalDetails){
-
         return "join";
     }
 
     @PostMapping("/join")
-    public String join(UserEntity userEntity){
-        if(userEntity.getId() != null && userEntity.getPw() != null && userEntity.getName() != null && userEntity.getEmail() != null){
+    public String join(UserEntity userEntity, @AuthenticationPrincipal PrincipalDetails principalDetails){
+        UserEntity loginUser = principalDetails.getUserEntity();
+        if(userEntity.getId() != null && userEntity.getPw() != null && userEntity.getName() != null && userEntity.getEmail() != null && userEntity.getPhoneNum() != null){
             String hashPw = bCryptPasswordEncoder.encode(userEntity.getPw());
             userEntity.setRole("ROLE_USER");
             userEntity.setNickname(userEntity.getId());
             userEntity.setPw(hashPw);
             userRepository.save(userEntity);
-            return "redirect:login";
+        }else if(loginUser.getPhoneNum() == null){
+            loginUser.setPhoneNum(userEntity.getPhoneNum());
+            userRepository.updatePhoneNum(loginUser.getPhoneNum(), loginUser.getId());
         }
-        return "join";
+        return "redirect:/login";
     }
-
 //    @ResponseBody
 //    @GetMapping("/check/sendSMS")
 //    public String authSms(String phoneNumber){

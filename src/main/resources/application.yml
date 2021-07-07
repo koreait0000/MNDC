@@ -17,9 +17,9 @@ mybatis:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mndc
+    url: jdbc:mysql://localhost:3308/mndc
     username: root
-    password: root
+    password: koreait
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요
 #TODO : 및 DB에 계정 생성 및 권한 부여 필요
   mvc:

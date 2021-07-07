@@ -15,9 +15,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
+        System.out.println("핸들러 실행됨");
         PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
         if(principalDetails.getUserEntity().getPhoneNum() == null){
             httpServletResponse.sendRedirect("/join");
+        }else{
+            httpServletResponse.sendRedirect("/");
         }
     }
 }
