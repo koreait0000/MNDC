@@ -28,6 +28,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+        System.out.println("loadUser 실행됨" );
         System.out.println("getClientRegistration : " + userRequest.getClientRegistration()); //registrationId로 어떤 oauth로 로그인했는지 확인가능
         System.out.println("액세스 토큰: "+userRequest.getAccessToken().getTokenValue());
         OAuth2User oauth2User = super.loadUser(userRequest);
@@ -56,16 +57,16 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
         UserEntity userEntity = userRepository.findById(email);
         if(userEntity == null) {
-//            userEntity = userEntity.builder()
-//                    .id(email)
-//                    .pw(pw)
-//                    .email(email)
-//                    .name(name)
-//                    .nickname(name)
-//                    .role(role)
-//                    .provider(provider)
-//                    .providerId(providerId)
-//                    .build();
+            userEntity = userEntity.builder()
+                    .id(email)
+                    .pw(pw)
+                    .email(email)
+                    .name(name)
+                    .nickname(name)
+                    .role(role)
+                    .provider(provider)
+                    .providerId(providerId)
+                    .build();
             userRepository.save(userEntity);
         }
         //회원가입을 강제로 진행시킬것
