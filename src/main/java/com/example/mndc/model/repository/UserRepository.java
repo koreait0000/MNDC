@@ -1,4 +1,4 @@
-package com.example.mndc.sta.repository;
+package com.example.mndc.model.repository;
 
 
 import com.example.mndc.sta.model.UserEntity;

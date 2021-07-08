@@ -2,7 +2,7 @@ package com.example.mndc.dyn.controller;
 
 import com.example.mndc.sta.auth.PrincipalDetails;
 import com.example.mndc.sta.model.UserEntity;
-import com.example.mndc.sta.repository.UserRepository;
+import com.example.mndc.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
