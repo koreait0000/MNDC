@@ -6,7 +6,7 @@ import com.example.mndc.sta.provider.FacebookUserInfo;
 import com.example.mndc.sta.provider.GoogleUserInfo;
 import com.example.mndc.sta.provider.NaverUserInfo;
 import com.example.mndc.sta.provider.Oauth2UserInfo;
-import com.example.mndc.model.repository.UserRepository;
+import com.example.mndc.sta.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

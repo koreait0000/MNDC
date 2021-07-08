@@ -2,7 +2,7 @@ package com.example.mndc.sta.auth;
 
 
 import com.example.mndc.sta.model.UserEntity;
-import com.example.mndc.model.repository.UserRepository;
+import com.example.mndc.sta.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
