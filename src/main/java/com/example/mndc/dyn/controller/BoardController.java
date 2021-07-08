@@ -1,8 +1,8 @@
-package com.example.mndc.dyn.controller;
+package com.example.mndc.controller;
 
-import com.example.mndc.sta.model.dto.BoardDTO;
-import com.example.mndc.sta.model.dto.MilitaryUnitDTO;
-import com.example.mndc.dyn.service.BoardService;
+import com.example.mndc.model.dto.BoardDTO;
+import com.example.mndc.model.dto.MilitaryUnitDTO;
+import com.example.mndc.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
