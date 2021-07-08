@@ -1,4 +1,4 @@
-package com.example.mndc.util;
+package com.example.mndc.dyn.util;
 
 public interface UserPath {
     String LOGIN = "/login";
