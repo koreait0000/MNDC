@@ -1,13 +1,11 @@
 package com.example.mndc.dyn.service;
 
-
-import com.example.mndc.auth.PrincipalDetails;
-import com.example.mndc.dao.BoardDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.mndc.dyn.dao.BoardDAO;
+import com.example.mndc.sta.auth.PrincipalDetails;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -18,7 +16,7 @@ import java.util.Random;
 public class UserService {
 
     @Autowired
-    BoardDAO boardDAO;
+    private BoardDAO boardDAO;
 
     // 로그인 체크
     public boolean isLogin(PrincipalDetails principalDetails){

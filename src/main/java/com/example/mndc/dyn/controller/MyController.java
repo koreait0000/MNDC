@@ -1,19 +1,18 @@
-package com.example.mndc.controller;
+package com.example.mndc.dyn.controller;
 
-import com.example.mndc.service.BoardService;
+import com.example.mndc.dyn.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/my")
 public class MyController {
 
     @Autowired
-    BoardService boardService;
+    private BoardService boardService;
 
     //TODO : 로그인 된 정보에 따라 m_pk값 가져오기
     //TODO : 로그인 여부 검사를 통해 접근 제어
