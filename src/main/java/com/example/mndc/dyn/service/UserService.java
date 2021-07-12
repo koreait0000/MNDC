@@ -20,13 +20,12 @@ public class UserService {
 
     // 로그인 체크
     public boolean isLogin(PrincipalDetails principalDetails){
-        return principalDetails == null;
+        return principalDetails != null;
     }
     // 로그인 체크 + 계정일치 체크
     public boolean isLoginMatch(PrincipalDetails principalDetails,int b_pk){
 
-        return isLogin(principalDetails) &&
-                principalDetails.getUserEntity().getIuser().intValue() == boardDAO.selectInfoByBPk(b_pk).getM_pk();
+        return principalDetails.getUserEntity().getIuser().intValue() == boardDAO.selectInfoByBPk(b_pk).getM_pk();
     }
   
     public String randNum(){

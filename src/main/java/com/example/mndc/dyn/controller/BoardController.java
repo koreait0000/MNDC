@@ -1,19 +1,30 @@
 package com.example.mndc.dyn.controller;
 
 import com.example.mndc.dyn.service.BoardService;
+import com.example.mndc.dyn.service.FavService;
+import com.example.mndc.dyn.service.UserService;
+import com.example.mndc.dyn.utils.BoardPath;
+import com.example.mndc.dyn.utils.UserPath;
+import com.example.mndc.sta.auth.PrincipalDetails;
+import com.example.mndc.sta.model.FavEntity;
 import com.example.mndc.sta.model.dto.BoardDTO;
 import com.example.mndc.sta.model.dto.MilitaryUnitDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/board")
-public class BoardController {
+public class BoardController implements BoardPath, UserPath {
 
     @Autowired
-    BoardService boardService;
+    private BoardService boardService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private FavService favService;
 
     @GetMapping("/lists")
     public String viewBoard(@RequestParam(defaultValue = "1") int type,
@@ -21,7 +32,7 @@ public class BoardController {
         // 부대 정보를 보여줄 컨트롤러 입니다.
         model.addAttribute("list",boardService.getUnitInfo(type));
 
-        return "/board/lists";
+        return BOARD+LISTS;
     }
 
     @PostMapping("/lists")
@@ -39,7 +50,7 @@ public class BoardController {
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
-        return "/board/list";
+        return BOARD+LIST;
     }
     // 게시글 보기
     @GetMapping("/view")
@@ -49,41 +60,59 @@ public class BoardController {
                           Model model){
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
         model.addAttribute("board",boardService.getBoardInfo(b_pk));
-        return "/board/view";
+        return BOARD+VIEW;
     }
     // 글쓰기
     @GetMapping("/write")
-    public String writeBoard(){
-        // TODO : 필터를 통해 로그인이 안 됐을시 접근 제어
+    public String writeBoard(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        if(!userService.isLogin(principalDetails)){ //
+            return REDIRECT+LOGIN;
+        }
 
-        return "/board/write";
+        return BOARD+WRITE;
     }
     @PostMapping("/write")
     public String doWrite(BoardDTO boardDTO){
         boardService.writeBoard(boardDTO);
-        return "redirect:/view";
+        return REDIRECT+VIEW;
     }
     // 수정하기
     @GetMapping("/modify")
     public String modifyBoard(@RequestParam int b_pk,
-                              Model model){
-        // TODO : 필터를 통해 로그인이 안 됐을시 접근 제어. 작성자인지 확인하기
+                              Model model,
+                              @AuthenticationPrincipal PrincipalDetails principalDetails){
+        if(!userService.isLogin(principalDetails)){ //
+            return REDIRECT+LOGIN;
+        }else if(!userService.isLoginMatch(principalDetails,b_pk)){
+            return ""; // 잘못된 접근. goback 또는 List로!
+        }
         model.addAttribute("board",boardService.getBoardInfo(b_pk));
-        return "/board/modify";
+        return BOARD+MODIFY;
     }
     @PostMapping("/modify")
     public String doModify(BoardDTO boardDTO){
         boardService.modifyBoard(boardDTO);
-        return "redirect:/view";
+        return REDIRECT+VIEW;
     }
 
     @PostMapping("/delete")
-    public String doDelete(BoardDTO boardDTO){
-        // TODO : 필터를 통해 로그인이 안 됐을시 접근 제어. 작성자인지 확인하기
+    public String doDelete(BoardDTO boardDTO,
+                           @AuthenticationPrincipal PrincipalDetails principalDetails){
+        if(!userService.isLogin(principalDetails)){ //
+            return REDIRECT+LOGIN;
+        }else if(!userService.isLoginMatch(principalDetails,boardDTO.getB_pk())){
+            return ""; // 잘못된 접근. goback 또는 List로!
+        }
         boardService.deleteBoard(boardDTO);
-        return "redirect:/list";
+        return REDIRECT+LIST;
     }
-    
-    // TODO : 추천버튼
-    // TODO :
+
+    @PostMapping("/fav")
+    @ResponseBody
+    public int configFav(@RequestParam FavEntity favEntity,
+                         @RequestParam int flag){
+        // TODO : 뭘 보내줄까?
+
+        return favService.favProc(favEntity,flag);
+    }
 }
