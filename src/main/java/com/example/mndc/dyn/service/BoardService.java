@@ -7,6 +7,7 @@ import com.example.mndc.sta.model.CmtEntity;
 import com.example.mndc.sta.model.MilitaryUnitEntity;
 import com.example.mndc.sta.model.dto.BoardDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class BoardService {
 
     @Autowired
     MilitaryUnitDAO militaryUnitDAO;
+
     @Autowired
     BoardDAO boardDAO;
 

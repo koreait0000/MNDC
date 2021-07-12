@@ -13,7 +13,7 @@
     <footer id="footer" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="center btmspace-50">
-            <h6 class="heading">Sislaf</h6>
+            <h6 class="heading">ALMOND</h6>
             <ul class="faico clear">
                 <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
                 <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
