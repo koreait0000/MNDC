@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private PrincipalOauth2UserService principalOauth2UserService;
 
     @Bean
-    public BCryptPasswordEncoder encodePwd(){
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
 

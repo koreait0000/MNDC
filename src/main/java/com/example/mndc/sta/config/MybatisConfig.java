@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.mndc.dao")
+@MapperScan(basePackages = "com.example.mndc.dyn.dao")
 public class MybatisConfig {
 
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setTypeAliasesPackage("com.example.mndc.model");
+        sqlSessionFactory.setTypeAliasesPackage("com.example.mndc.sta.model");
 
         return sqlSessionFactory.getObject();
     }
