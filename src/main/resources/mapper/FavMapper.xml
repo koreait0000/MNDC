@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FavDAO">
+    <insert id="insertFavUp">
+        insert into fav
+            value (#{m_pk},#{b_pk})
+    </insert>
+    <update id="updateFav">
+        update fav
+        set toggle = #{toggle}
+        where b_pk = #{b_pk}
+          and m_pk = #{m_pk}
+    </update>
+    <delete id="deleteFavDown">
+        delete from fav
+        where b_pk = #{b_pk}
+          and m_pk = #{m_pk}
+    </delete>
+    <select id="selectFavCount">
+        select count(*) from fav
+        where b_pk = #{b_pk}
+    </select>
+
+</mapper>
