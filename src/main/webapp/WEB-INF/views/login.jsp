@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="/css/login.css">
 <div class="main-container">
-    <form method="post" action="/login" class="main-wrap login-input-section-wrap">
-        <h1>Login</h1>
+    <h1>Login</h1>
+    <form method="post" id="form" action="/login" class="main-wrap login-input-section-wrap">
         <div class="login-input-wrap"><input type="text" name="id" class="id" placeholder="ID"></div>
         <div class="login-input-wrap password-wrap"><input type="password" name="pw" class="pw" placeholder="PW"></div>
-        <div class="login-button-wrap"><input type="submit" value="LOG IN"></div>
+        <div class="login-button-wrap"><input type="button" name="button1" value="LOG IN"></div>
     </form>
     <div class="login-stay-sign-in">
         Don't you have ID? <a href="/join">join</a>
@@ -19,4 +19,4 @@
         </ul>
     </div>
 </div>
-
+<script src="/js/login.js"></script>

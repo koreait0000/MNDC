@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     //findBy규칙 -> Username문법
     //select * from user where username = ?(파라미터값) 이렇게 호출된다 JPA 쿼리 메소드
-    UserEntity findById(String id);
+    UserEntity findByid(String id);
 
     @Transactional
     @Modifying
