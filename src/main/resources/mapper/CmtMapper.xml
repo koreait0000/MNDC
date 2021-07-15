@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CmtDAO">
+    <select id="selectAllInfoByUpk">
+        select * from cmt
+        where m_pk = #{m_pk}
+    </select>
+    <select id="selectUnreadInfoByMpk">
+        select *
+        from cmt
+        where b_pk =
+              (
+                  select b_pk
+                  from board
+                  where board.m_pk = #{m_pk}
+              )
+        and c_alert = 1
+    </select>
+    <update id="updateCAlertByCpk">
+        update cmt
+        set c_alert = 0
+        where c_pk = #{c_pk}
+    </update>
+    <update id="insertCmt">
+        insert into cmt (c_ctnt, b_pk, m_pk)
+        values (#{c_cnt},#{b_pk},#{m_pk});
+    </update>
+    <delete id="deleteCmtByCpk">
+        delete from cmt
+        where c_pk = #{c_pk}
+    </delete>
+    <delete id="deleteCmtByBpk">
+        delete from cmt
+        where b_pk = #{b_pk}
+    </delete>
+</mapper>

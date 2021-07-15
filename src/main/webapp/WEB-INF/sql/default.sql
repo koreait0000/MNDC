@@ -12,7 +12,7 @@ create table military_unit(
 create table member(
     m_pk int AUTO_INCREMENT primary key,
     m_id varchar(20) not null,
-    --m_pw varchar(60) not null,
+    m_pw varchar(60) not null,
     m_type int(1) check(m_type in(1,2,3)),
     m_auth int(1) check(m_auth in(1,2,3)),
     mu_pk int,
@@ -32,6 +32,29 @@ create table board(
     mu_pk int,
     foreign key (m_pk) references member(m_pk),
     foreign key (mu_pk) references military_unit(mu_pk)
+);
+
+drop table cmt;
+create table cmt(
+    c_pk int AUTO_INCREMENT primary key,
+    c_ctnt varchar(100) not null ,
+    c_regdt date default now(),
+    c_alert tinyint(1) default 1,
+
+    b_pk int,
+    m_pk int,
+
+    foreign key (b_pk) references board(b_pk),
+    foreign key (m_pk) references member(m_pk)
+);
+drop table fav;
+create table fav(
+    m_pk int,
+    b_pk int,
+    toggle tinyint(1) comment '0은 싫어요, 1은 좋아요',
+    primary key (m_pk,b_pk),
+    foreign key (m_pk) references member(m_pk),
+    foreign key (b_pk) references board(b_pk)
 );
 --
 해군
