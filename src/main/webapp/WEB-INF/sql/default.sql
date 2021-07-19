@@ -1,3 +1,4 @@
+drop database if exists mndc;
 create database mndc default character set utf8 collate utf8_general_ci;
 
 use mndc;
@@ -34,7 +35,7 @@ create table board(
     foreign key (mu_pk) references military_unit(mu_pk)
 );
 
-drop table cmt;
+drop table if exists cmt;
 create table cmt(
     c_pk int AUTO_INCREMENT primary key,
     c_ctnt varchar(100) not null ,
@@ -47,7 +48,7 @@ create table cmt(
     foreign key (b_pk) references board(b_pk),
     foreign key (m_pk) references member(m_pk)
 );
-drop table fav;
+drop table if exists fav;
 create table fav(
     m_pk int,
     b_pk int,

@@ -110,8 +110,10 @@ public class BoardController implements BoardPath, UserPath {
     @PostMapping("/fav")
     @ResponseBody
     public int configFav(@RequestParam FavEntity favEntity,
-                         @RequestParam int flag){
+                         @RequestParam int flag,
+                         @AuthenticationPrincipal PrincipalDetails principalDetails){
         // TODO : 뭘 보내줄까?
+        favEntity.setM_pk(principalDetails.getUserEntity().getIuser());
 
         return favService.favProc(favEntity,flag);
     }

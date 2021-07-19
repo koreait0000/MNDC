@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeRequests()
-                .antMatchers("/", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**").permitAll()
+                .antMatchers("/", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**","/board/**").permitAll()
                 .antMatchers("/user/**").authenticated() //인증만 되면 들어갈수 있는 주소
                 //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
                 //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')")
