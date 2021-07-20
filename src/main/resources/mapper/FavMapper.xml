@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="FavDAO">
+<mapper namespace="com.example.mndc.dyn.dao.FavDAO">
     <insert id="insertFavUp">
         insert into fav
             value (#{m_pk},#{b_pk})
@@ -17,7 +17,7 @@
         delete from fav
         where b_pk = #{b_pk}
           and m_pk = #{m_pk}
-    </delete>
+</delete>
     <select id="selectFavCount">
         select count(*) from fav
         where b_pk = #{b_pk}

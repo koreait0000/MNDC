@@ -3,21 +3,23 @@ package com.example.mndc.dyn.controller;
 import com.example.mndc.dyn.service.BoardService;
 import com.example.mndc.dyn.service.FavService;
 import com.example.mndc.dyn.service.UserService;
-import com.example.mndc.dyn.utils.BoardPath;
-import com.example.mndc.dyn.utils.UserPath;
+import com.example.mndc.dyn.utils.Path;
 import com.example.mndc.sta.auth.PrincipalDetails;
 import com.example.mndc.sta.model.FavEntity;
+import com.example.mndc.sta.model.MilitaryUnitEntity;
 import com.example.mndc.sta.model.dto.BoardDTO;
-import com.example.mndc.sta.model.dto.MilitaryUnitDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping("/board")
-public class BoardController implements BoardPath, UserPath {
+public class BoardController extends Path {
 
     @Autowired
     private BoardService boardService;
@@ -37,11 +39,13 @@ public class BoardController implements BoardPath, UserPath {
 
     @PostMapping("/lists")
     @ResponseBody
-    public MilitaryUnitDTO searchBoard(){
+    public List<MilitaryUnitEntity> searchBoard(String search,
+                                                int mu_pk){
         // TODO : 여기서 ajax를 통해 통신받은 검색값을 보내주어, 해당 검색어에 일치하는 정보를 넘겨줍니다.
         // 검색어를 통한 select문
-
-        return new MilitaryUnitDTO();
+        List<MilitaryUnitEntity> list = new ArrayList<>();
+        list = boardService.getUnitInfoSearch(search,mu_pk);
+        return list;
     }
 
     // 게시판
@@ -49,6 +53,7 @@ public class BoardController implements BoardPath, UserPath {
     public String viewList(@RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
+        model.addAttribute("unit",boardService.getUnitName(mu_pk));
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
         return BOARD+LIST;
     }
@@ -58,6 +63,7 @@ public class BoardController implements BoardPath, UserPath {
                           @RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
+        model.addAttribute("unit",boardService.getUnitName(mu_pk));
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
         model.addAttribute("board",boardService.getBoardInfo(b_pk));
         return BOARD+VIEW;
@@ -110,8 +116,10 @@ public class BoardController implements BoardPath, UserPath {
     @PostMapping("/fav")
     @ResponseBody
     public int configFav(@RequestParam FavEntity favEntity,
-                         @RequestParam int flag){
+                         @RequestParam int flag,
+                         @AuthenticationPrincipal PrincipalDetails principalDetails){
         // TODO : 뭘 보내줄까?
+//        favEntity.setM_pk(principalDetails.getUserEntity().getM_pk());
 
         return favService.favProc(favEntity,flag);
     }

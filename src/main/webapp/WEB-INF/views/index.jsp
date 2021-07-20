@@ -116,7 +116,7 @@
         <section id="introblocks">
             <ul class="nospace group btmspace-80">
                 <li class="one_third first">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/육군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="/board/lists?type=1"><img class="imgSize" src="/img/demo/육군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">육군</h6>
                             <p>대한민국 국군 중 지상을 담당하는 군사조직, 3군 중 가장 큰 비중을 차지한다. 한국 육군의 기원은 임시정부의 광복군이다.</p>
@@ -124,7 +124,7 @@
                     </figure>
                 </li>
                 <li class="one_third">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/해군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="/board/lists?type=2"><img class="imgSize" src="/img/demo/해군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">해군</h6>
                             <p>대한민국 해군은 해상작전을 주 임무로 하는 대한민국 국군의 조직으로, 상륙작전을 주 임무로 하는 해병대를 예하에 두고 있다.</p>
@@ -132,7 +132,7 @@
                     </figure>
                 </li>
                 <li class="one_third">
-                    <figure><a class="imgover" href="#"><img class="imgSize" src="/img/demo/공군마크.jpg" alt=""></a>
+                    <figure><a class="imgover" href="/board/lists?type=3"><img class="imgSize" src="/img/demo/공군마크.jpg" alt=""></a>
                         <figcaption>
                             <h6 class="heading">공군</h6>
                             <p>대한민국 공군은 대한민국의 영공 방위를 책임지는 대한민국 국군의 공군이다.</p>
