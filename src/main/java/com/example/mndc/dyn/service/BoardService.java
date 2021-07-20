@@ -17,7 +17,6 @@ public class BoardService {
 
     @Autowired
     MilitaryUnitDAO militaryUnitDAO;
-
     @Autowired
     BoardDAO boardDAO;
 
@@ -62,6 +61,9 @@ public class BoardService {
     }
     public List<MilitaryUnitEntity> searchMilitaryUnit(String search){
         return militaryUnitDAO.selectAllInfoBySearch(search);
+    }
+    public String getUnitName(int mu_pk){
+        return militaryUnitDAO.selectNameByMuPk(mu_pk);
     }
 
 }

@@ -11,16 +11,17 @@ server:
     force: true
 
 mybatis:
-
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.mndc.sta.model
+
+
 
 
 
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mndc
+    url: jdbc:mysql://localhost:3308/mndc
     username: root
     password: koreait
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요

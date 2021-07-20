@@ -49,6 +49,7 @@ public class BoardController implements BoardPath, UserPath {
     public String viewList(@RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
+        model.addAttribute("unit",boardService.getUnitName(mu_pk));
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
         return BOARD+LIST;
     }
@@ -58,6 +59,7 @@ public class BoardController implements BoardPath, UserPath {
                           @RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
+        model.addAttribute("unit",boardService.getUnitName(mu_pk));
         model.addAttribute("list",boardService.getBoardsInfo(mu_pk,page));
         model.addAttribute("board",boardService.getBoardInfo(b_pk));
         return BOARD+VIEW;
@@ -113,7 +115,7 @@ public class BoardController implements BoardPath, UserPath {
                          @RequestParam int flag,
                          @AuthenticationPrincipal PrincipalDetails principalDetails){
         // TODO : 뭘 보내줄까?
-        favEntity.setM_pk(principalDetails.getUserEntity().getIuser());
+//        favEntity.setM_pk(principalDetails.getUserEntity().getM_pk());
 
         return favService.favProc(favEntity,flag);
     }
