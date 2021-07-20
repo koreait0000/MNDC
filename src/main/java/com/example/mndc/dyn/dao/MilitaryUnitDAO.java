@@ -8,6 +8,6 @@ import java.util.List;
 @Mapper
 public interface MilitaryUnitDAO {
     List<MilitaryUnitEntity> selectAllInfoByType(int mu_type);
-    List<MilitaryUnitEntity> selectAllInfoBySearch(String search);
+    List<MilitaryUnitEntity> selectAllInfoBySearch(String search,int type);
     String selectNameByMuPk(int mu_pk);
 }

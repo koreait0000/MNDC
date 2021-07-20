@@ -1,6 +1,6 @@
 package com.example.mndc.dyn.utils;
 
-public interface Path {
-    String REDIRECT = "redirect:";
-    String FORWARD = "forward:";
+public abstract class Path implements BoardPath, UserPath {
+    public final String REDIRECT = "redirect:";
+    public final String FORWARD = "forward:";
 }

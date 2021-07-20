@@ -1,6 +1,6 @@
 package com.example.mndc.dyn.utils;
 
-public interface BoardPath extends Path{
+public interface BoardPath{
     String BOARD = "/board";
     String LISTS = "/lists"; //
     String LIST = "/list";

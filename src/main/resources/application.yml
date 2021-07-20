@@ -6,7 +6,7 @@ server:
   port: 8090
   context-path: /
   encoding:
-    charset: UTF-8
+    charset: UTF-8w
     enabled: true
     force: true
 
