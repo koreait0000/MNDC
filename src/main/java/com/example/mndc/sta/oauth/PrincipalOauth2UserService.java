@@ -20,7 +20,7 @@ import java.util.Map;
 @Service
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
-
+    @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
@@ -48,28 +48,22 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         }
 
         String provider = oauth2UserInfo.getProvider(); // google
-        String providerId = oauth2UserInfo.getProviderId();
-        String username = provider+"_"+providerId;
         String role = "ROLE_USER";
         String name = oauth2UserInfo.getName();
         String pw = bCryptPasswordEncoder.encode("password");
         String email = oauth2UserInfo.getEmail();
-
-        UserEntity userEntity = userRepository.findById(email);
+        UserEntity userEntity = userRepository.findByMid(email);
         if(userEntity == null) {
             userEntity = userEntity.builder()
-                    .id(email)
-                    .pw(pw)
-                    .email(email)
-                    .name(name)
-                    .nickname(name)
-                    .role(role)
+                    .mid(email)
+                    .mpw(pw)
+                    .mnm(name)
+                    .mrole(role)
                     .provider(provider)
-                    .providerId(providerId)
                     .build();
             userRepository.save(userEntity);
         }
-        //회원가입을 강제로 진행시킬것
+        //회원가입을 강제로 진행시킴
         return new PrincipalDetails(userEntity,oauth2User.getAttributes());
     }
 }

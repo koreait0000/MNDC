@@ -1,5 +1,6 @@
 package com.example.mndc.sta.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,41 +11,30 @@ import java.sql.Timestamp;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long iuser;
+    private Long mpk;
     @Column(unique = true, nullable = false)
-    private String id;
+    private String mid;
     @Column(nullable = false)
-    private String pw;
+    private String mpw;
     @Column(unique = true, nullable = false)
     private String email;
 //    @Column(nullable = false)
-    private String phoneNum;
+//    private String phoneNum;
+//    @Column(nullable = false)
+//    private String name;
     @Column(nullable = false)
-    private String name;
-    @Column(nullable = false)
-    private String nickname;
-    private String role;
+    private String mnm;
+    private String mrole;
+    private String mauth;
     private String provider;
-    private String providerId;
     @CreationTimestamp
-    private Timestamp reg_dt;
+    private Timestamp regdt;
 
-    @Builder
-    public UserEntity(String id, String pw, String email, String phoneNum, String name, String nickname, String role, String provider, String providerId, Timestamp reg_dt) {
-        this.id=id;
-        this.pw=pw;
-        this.email=email;
-        this.phoneNum = phoneNum;
-        this.name = name;
-        this.nickname = nickname;
-        this.role=role;
-        this.provider=provider;
-        this.providerId=providerId;
-        this.reg_dt=reg_dt;
-    }
 }
