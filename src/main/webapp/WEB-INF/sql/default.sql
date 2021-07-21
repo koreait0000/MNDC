@@ -9,14 +9,18 @@ create table military_unit(
     mu_name varchar(20) not null, -- 부대 이름
     mu_type int(1) check(mu_type in(1,2,3,4,5)) -- 부대 편제 정보(1:육, 2:해, 3:공, 4:해병, 5:국)
 );
-create table member(
-    m_pk int AUTO_INCREMENT primary key,
-    m_id varchar(20) not null,
-    m_pw varchar(60) not null,
-    m_type int(1) check(m_type in(1,2,3)),
-    m_auth int(1) check(m_auth in(1,2,3)),
-    mu_pk int,
-    foreign key (mu_pk) references military_unit(mu_pk)
+create table user(
+     mpk bigint not null auto_increment,
+     email varchar(255) not null,
+     mauth varchar(255),
+     mid varchar(255) not null,
+     mnm varchar(255) not null,
+     mpw varchar(255) not null,
+     mrole varchar(255),
+     provider varchar(255),
+     regdt datetime(6),
+     primary key (mpk)
+--      foreign key (mu_pk) references military_unit(mu_pk)
 );
 
 create table board(
@@ -30,7 +34,7 @@ create table board(
 
     m_pk int,
     mu_pk int,
-    foreign key (m_pk) references member(m_pk),
+    foreign key (m_pk) references user(mpk),
     foreign key (mu_pk) references military_unit(mu_pk)
 );
 
@@ -45,7 +49,7 @@ create table cmt(
     m_pk int,
 
     foreign key (b_pk) references board(b_pk),
-    foreign key (m_pk) references member(m_pk)
+    foreign key (m_pk) references user(mpk)
 );
 drop table fav;
 create table fav(
@@ -53,7 +57,7 @@ create table fav(
     b_pk int,
     toggle tinyint(1) comment '0은 싫어요, 1은 좋아요',
     primary key (m_pk,b_pk),
-    foreign key (m_pk) references member(m_pk),
+    foreign key (m_pk) references user(mpk),
     foreign key (b_pk) references board(b_pk)
 );
 --
