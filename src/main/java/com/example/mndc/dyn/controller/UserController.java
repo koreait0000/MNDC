@@ -1,67 +1,58 @@
 package com.example.mndc.dyn.controller;
 
+import com.example.mndc.dyn.service.UserService;
+import com.example.mndc.dyn.utils.UserPath;
 import com.example.mndc.sta.auth.PrincipalDetails;
 import com.example.mndc.sta.model.UserEntity;
 import com.example.mndc.sta.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class UserController {
+public class UserController implements UserPath {
 
-
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping("/login")
     public String login(){
         return "login";
     }
+    @GetMapping("/user")
+    @ResponseBody
+    public String user(){
+        return "user";
+    }
 
     @GetMapping("/join")
-    public String join(@AuthenticationPrincipal PrincipalDetails principalDetails){
+    public String join(){
+//        System.out.println(principalDetails.getUserEntity());
         return "join";
     }
 
     @PostMapping("/join")
-    public String join(UserEntity userEntity, @AuthenticationPrincipal PrincipalDetails principalDetails){
-        UserEntity loginUser = principalDetails.getUserEntity();
-        if(userEntity.getId() != null && userEntity.getPw() != null && userEntity.getName() != null && userEntity.getEmail() != null && userEntity.getPhoneNum() != null){
-            String hashPw = bCryptPasswordEncoder.encode(userEntity.getPw());
-            userEntity.setRole("ROLE_USER");
-            userEntity.setNickname(userEntity.getId());
-            userEntity.setPw(hashPw);
-            userRepository.save(userEntity);
-        }else if(loginUser.getPhoneNum() == null){
-            loginUser.setPhoneNum(userEntity.getPhoneNum());
-            userRepository.updatePhoneNum(loginUser.getPhoneNum(), loginUser.getId());
-        }
-        return "redirect:/login";
+    public String join(UserEntity userEntity){
+
+//        UserEntity loginUser = principalDetails.getUserEntity();
+
+//        else if(loginUser.get() == null){
+//            loginUser.setPhoneNum(userEntity.getPhoneNum());
+//            userRepository.updatePhoneNum(loginUser.getPhoneNum(), loginUser.getId());
+//        }
+        userService.join(userEntity);
+
+        return REDIRECT+LOGIN+"?needEmail=1";
     }
-//    @ResponseBody
-//    @GetMapping("/check/sendSMS")
-//    public String authSms(String phoneNumber){
-//        String rNum = userService.randNum();
-//        if(userService.certifiedPhoneNumber(phoneNumber,rNum) > 0){
-//            //coolsms의 일일 50회 test를 모두 사용했을때 302코드
-//            return "fail";
-//        }
-//        return rNum;
-//    }
-//    @PostMapping("/join")
-//    public String join(com.example.mndc.model.vo.UserEntity userEntity){
-//        if(userEntity.getId() != null && userEntity.getPw() != null && userEntity.getPhoneNum() != null && userEntity.getName() != null &&
-//        userEntity.getBirth() != null && userEntity.getEmail() != null){
-//            String hashPw = bCryptPasswordEncoder.encode(userEntity.getPw());
-//            userEntity.setPw(hashPw);
-//            userRepository.save(userEntity);
-//            return "redirect:login";
-//        }
-//        return "join";
-//    }
+
+    @GetMapping("/auth")
+    public String auth (UserEntity userEntity){
+        userService.auth(userEntity);
+        return REDIRECT+LOGIN+"?auth=1";
+    }
 }

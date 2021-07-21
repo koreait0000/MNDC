@@ -19,8 +19,8 @@ public class PrincipalDetailsService implements UserDetailsService {
 
     //시큐리티 세션(내부 authentication(내부 (Userdetails))이렇게 들어감 결론.  = authentication(내부 return시 userDetails 들어감) => userDetails
     @Override
-    public UserDetails loadUserByUsername(String id /*로그인 폼의 name값을 username이랑 동일하게 해야함*/) throws UsernameNotFoundException {
-        UserEntity userEntity = userRepository.findById(id);
+    public UserDetails loadUserByUsername(String mid /*로그인 폼의 name값을 username이랑 동일하게 해야함*/) throws UsernameNotFoundException {
+        UserEntity userEntity = userRepository.findByMid(mid);
         if(userEntity != null ){
             return new PrincipalDetails(userEntity);
         }
