@@ -50,7 +50,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         collect.add(new GrantedAuthority() {
             @Override
             public String getAuthority() {
-                return userEntity.getRole();
+                return userEntity.getMrole();
             }
         });
         return collect;
@@ -58,12 +58,12 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public String getPassword() {
-        return userEntity.getPw();
+        return userEntity.getMpw();
     }
 
     @Override
     public String getUsername() {
-        return userEntity.getId();
+        return userEntity.getMid();
     }
 
     //계정 만료 됬는지

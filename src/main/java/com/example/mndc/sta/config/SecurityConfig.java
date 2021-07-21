@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private PrincipalOauth2UserService principalOauth2UserService;
 
     @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+    public BCryptPasswordEncoder encodePwd(){
         return new BCryptPasswordEncoder();
     }
 
@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and()
             .authorizeRequests()
-            .antMatchers("/", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**").permitAll()
+            .antMatchers("/","/auth", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**").permitAll()
             .antMatchers("/user/**").authenticated() //인증만 되면 들어갈수 있는 주소
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')")
@@ -55,13 +55,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .addFilter(corsFilter)
             .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-            .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
+//            .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 
             .formLogin()
             .loginPage("/login")
             .loginProcessingUrl("/login")
-            .usernameParameter("id")
-            .passwordParameter("pw")
+            .usernameParameter("mid")
+            .passwordParameter("mpw")
             .defaultSuccessUrl("/")
             .and()
 

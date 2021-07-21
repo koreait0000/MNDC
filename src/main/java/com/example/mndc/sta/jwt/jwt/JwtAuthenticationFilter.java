@@ -44,13 +44,13 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             UserEntity user = om.readValue(request.getInputStream(), UserEntity.class);
 
             UsernamePasswordAuthenticationToken authenticationToken =
-                    new UsernamePasswordAuthenticationToken(user.getId(), user.getPw());
+                    new UsernamePasswordAuthenticationToken(user.getMid(), user.getMpw());
             // principaldetailsservice의 loaduser()메소드 실행
             //authentication에 내 로그인 정보가 담긴다.
             //db에 있는 username과 password가 일치한다.
             Authentication authentication = authenticationManager.authenticate(authenticationToken);
             PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
-            System.out.println(principalDetails.getUserEntity().getIuser());
+            System.out.println(principalDetails.getUserEntity().getMpk());
             //리턴될때 authentication 객체가 session영역에 저장됨 => 로그인이 되었다는 뜻.
             //리턴을 하는 이유는 권한 관리를 security가 대신 해주기 때문에 편하려고 하는거임.
             //굳이 jwt 토큰을 사용하면서 세션을 만들 이유가 없음. 단지 권한 처리때문에 session에 넣어줌
@@ -74,13 +74,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .setIssuer("fresh") // (2)
                 .setIssuedAt(new Date()) // (3)
                 .setExpiration(new Date(System.currentTimeMillis() + JwtProperties.EXPIRATTION_TIME))
-                .claim("iuser", principalDetails.getUserEntity().getIuser())
-                .claim("id", principalDetails.getUserEntity().getId())
-                .claim("phoneNum", principalDetails.getUserEntity().getPhoneNum())
-                .claim("email", principalDetails.getUserEntity().getEmail())
-                .claim("name", principalDetails.getUserEntity().getName())
-                .claim("nickname", principalDetails.getUserEntity().getNickname())
-                .claim("role", principalDetails.getUserEntity().getRole())
+                .claim("iuser", principalDetails.getUserEntity().getMpk())
+                .claim("id", principalDetails.getUserEntity().getMid())
+                .claim("nickname", principalDetails.getUserEntity().getMnm())
+                .claim("role", principalDetails.getUserEntity().getMrole())
                 .signWith(SignatureAlgorithm.HS512, JwtProperties.SECRET)
                 .compact();
 

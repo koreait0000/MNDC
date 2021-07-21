@@ -1,10 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/login.css">
 <div class="main-container">
     <h1>Login</h1>
+    <c:if test="${param.auth eq 1}">
+        <div>이메일 인증이 완료되었습니다. 로그인을 시도해주세요.</div>
+    </c:if>
+    <c:if test="${empty param.auth}">
+        <div>이메일 인증을 시도해주세요</div>
+    </c:if>
+
     <form method="post" id="form" action="/login" class="main-wrap login-input-section-wrap">
-        <div class="login-input-wrap"><input type="text" name="id" class="id" placeholder="ID"></div>
-        <div class="login-input-wrap password-wrap"><input type="password" name="pw" class="pw" placeholder="PW"></div>
+        <div class="login-input-wrap"><input type="text" name="mid" class="mid" placeholder="ID"></div>
+        <div class="login-input-wrap password-wrap"><input type="password" name="mpw" class="mpw" placeholder="PW"></div>
         <div class="login-button-wrap"><input type="button" name="button1" value="LOG IN"></div>
     </form>
     <div class="login-stay-sign-in">

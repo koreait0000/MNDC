@@ -31,7 +31,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
     //jwt토큰을 받고 내어보내는 endpoint?  인증
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("인증이나 권한이 필요한 주소 basicAuthenticationFitler");
+//        System.out.println("인증이나 권한이 필요한 주소 basicAuthenticationFitler");
         String reqToken = Arrays.stream(request.getCookies())
                 .filter(c -> c.getName().equals(JwtProperties.HEADER_STRING))
                 .findFirst() .map(Cookie::getValue)
@@ -60,7 +60,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
         System.out.println("=====================");
         System.out.println(id);
         if(id !=null){
-            UserEntity user = userRepository.findByid(id);
+            UserEntity user = userRepository.findByMid(id);
 
             PrincipalDetails principalDetails = new PrincipalDetails(user);
             //authentication 객체를 강제로 만듬 정상적인 이용자이기때문에 상관이없음
