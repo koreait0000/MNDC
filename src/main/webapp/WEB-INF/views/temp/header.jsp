@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="/css/common.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -58,30 +62,10 @@
           <li><a href="../index.html">Home</a></li>
           <li class="active"><a class="drop" href="#">Pages</a>
             <ul>
-              <li class="active"><a href="gallery.html">Gallery</a></li>
-              <li><a href="full-width.html">Full Width</a></li>
-              <li><a href="sidebar-left.html">Sidebar Left</a></li>
-              <li><a href="sidebar-right.html">Sidebar Right</a></li>
-              <li><a href="basic-grid.html">Basic Grid</a></li>
-              <li><a href="font-icons.html">Font Icons</a></li>
+              <li><a href="#">NOTICE_BOARD</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
+          <li><a href="#">SERVICE-CENTER</a></li>
         </ul>
         <!-- ################################################################################################ -->
       </nav>
