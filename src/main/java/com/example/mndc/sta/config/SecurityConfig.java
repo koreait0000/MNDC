@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .addFilter(corsFilter)
             .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-//            .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
+            .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 
             .formLogin()
             .loginPage("/login")
@@ -75,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .successHandler(new LoginSuccessHandler())
             .userInfoEndpoint()//구글 로그인이 완료된 뒤의 후처리가 필요함. 코드X (액세스 토큰 + 사용자 프로필 정보O)
             .userService(principalOauth2UserService);
+
         // 1. 코드 받기(인증) 2. 액세스 토큰(권한) 3. 사용자 프로필 정보를 가져오고 4. 그 정보를 토대로 회원가입을 자동으로 진행시키도록.
     }
 }
