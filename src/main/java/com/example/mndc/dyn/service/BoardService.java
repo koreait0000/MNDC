@@ -6,6 +6,7 @@ import com.example.mndc.sta.model.BoardEntity;
 import com.example.mndc.sta.model.CmtEntity;
 import com.example.mndc.sta.model.MilitaryUnitEntity;
 import com.example.mndc.sta.model.dto.BoardDTO;
+import com.example.mndc.sta.model.dto.MilitaryUnitDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,6 @@ public class BoardService {
 
     @Autowired
     MilitaryUnitDAO militaryUnitDAO;
-
     @Autowired
     BoardDAO boardDAO;
 
@@ -26,6 +26,9 @@ public class BoardService {
     public List<MilitaryUnitEntity> getUnitInfo(int type){
         // 부대 목록 불러오기
         return militaryUnitDAO.selectAllInfoByType(type);
+    }
+    public List<MilitaryUnitEntity> getUnitInfoSearch(String search, int type){
+        return militaryUnitDAO.selectAllInfoBySearch(search, type);
     }
     public List<BoardDTO> getBoardsInfo(int mu_pk,int page){
         //게시물 목록 불러오기
@@ -61,7 +64,10 @@ public class BoardService {
         return boardDAO.selectAllInfoBySearch(search);
     }
     public List<MilitaryUnitEntity> searchMilitaryUnit(String search){
-        return militaryUnitDAO.selectAllInfoBySearch(search);
+        return militaryUnitDAO.selectAllInfoBySearch(search,0);
+    }
+    public String getUnitName(int mu_pk){
+        return militaryUnitDAO.selectNameByMuPk(mu_pk);
     }
 
 }

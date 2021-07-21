@@ -2,20 +2,25 @@ server:
   port: 8090
   context-path: /
   encoding:
-    charset: UTF-8
+    charset: UTF-8w
     enabled: true
     force: true
 
 mybatis:
-  mapper-locations: mapper/**/*.xml
-  type-aliases-package: com.example.mndc
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.mndc.sta.model
+
+
+
+
 
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mndc
     username: root
-    password: root
+    password: koreait
+
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요
 #TODO : 및 DB에 계정 생성 및 권한 부여 필요
   mvc:
