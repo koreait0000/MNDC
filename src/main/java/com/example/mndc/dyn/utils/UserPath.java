@@ -1,6 +1,6 @@
 package com.example.mndc.dyn.utils;
 
-public interface UserPath extends Path{
+public interface UserPath{
     String USER = "/user";
     String LOGIN = "/login";
     String JOIN ="/join";

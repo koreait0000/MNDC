@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/board")
+@RequestMapping(Path.BOARD)
 public class BoardController extends Path {
 
     @Autowired
@@ -28,7 +28,7 @@ public class BoardController extends Path {
     @Autowired
     private FavService favService;
 
-    @GetMapping("/lists")
+    @GetMapping(LISTS)
     public String viewBoard(@RequestParam(defaultValue = "1") int type,
                            Model model){
         // 부대 정보를 보여줄 컨트롤러 입니다.
@@ -37,7 +37,7 @@ public class BoardController extends Path {
         return BOARD+LISTS;
     }
 
-    @PostMapping("/lists")
+    @PostMapping(LISTS)
     @ResponseBody
     public List<MilitaryUnitEntity> searchBoard(String search,
                                                 int mu_pk){
@@ -49,7 +49,7 @@ public class BoardController extends Path {
     }
 
     // 게시판
-    @GetMapping("/list")
+    @GetMapping(LIST)
     public String viewList(@RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
                           Model model){
@@ -58,7 +58,7 @@ public class BoardController extends Path {
         return BOARD+LIST;
     }
     // 게시글 보기
-    @GetMapping("/view")
+    @GetMapping(VIEW)
     public String viewBoard(@RequestParam int b_pk, // 게시물 번호
                           @RequestParam int mu_pk, // 게시판 번호
                           @RequestParam(defaultValue = "1") int page, // 페이지 번호
@@ -69,7 +69,7 @@ public class BoardController extends Path {
         return BOARD+VIEW;
     }
     // 글쓰기
-    @GetMapping("/write")
+    @GetMapping(WRITE)
     public String writeBoard(@AuthenticationPrincipal PrincipalDetails principalDetails){
         if(!userService.isLogin(principalDetails)){ //
             return REDIRECT+LOGIN;
@@ -77,13 +77,13 @@ public class BoardController extends Path {
 
         return BOARD+WRITE;
     }
-    @PostMapping("/write")
+    @PostMapping(WRITE)
     public String doWrite(BoardDTO boardDTO){
         boardService.writeBoard(boardDTO);
         return REDIRECT+VIEW;
     }
     // 수정하기
-    @GetMapping("/modify")
+    @GetMapping(MODIFY)
     public String modifyBoard(@RequestParam int b_pk,
                               Model model,
                               @AuthenticationPrincipal PrincipalDetails principalDetails){
@@ -95,13 +95,13 @@ public class BoardController extends Path {
         model.addAttribute("board",boardService.getBoardInfo(b_pk));
         return BOARD+MODIFY;
     }
-    @PostMapping("/modify")
+    @PostMapping(MODIFY)
     public String doModify(BoardDTO boardDTO){
         boardService.modifyBoard(boardDTO);
         return REDIRECT+VIEW;
     }
 
-    @PostMapping("/delete")
+    @PostMapping(DELETE)
     public String doDelete(BoardDTO boardDTO,
                            @AuthenticationPrincipal PrincipalDetails principalDetails){
         if(!userService.isLogin(principalDetails)){ //
