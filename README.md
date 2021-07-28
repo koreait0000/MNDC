@@ -1,8 +1,5 @@
 # ALMOND
 
-<a href="https://www.youtube.com/watch?v=DTD8mx3fMaE">![화면 캡처 2021-07-05 114443](https://user-images.githubusercontent.com/81272766/124412082-b3fe2480-dd88-11eb-8e82-1511b80cb38f.png)
-</a>
-
 ## 목차
 1. [개요](#chapter1)
     - 서비스 요약
@@ -123,7 +120,6 @@
 <table width="788">
 <thead>
 <tr>
-<th width="100" align="center">사진</th>
 <th width="100" align="center">성명</th>
 <th width="150" align="left">담당</th>
 <th width="100" align="center">깃허브</th>
@@ -132,7 +128,6 @@
 </thead>
 <tbody>
 <tr>
-<td width="100" align="center"><img src="/image/PROFILE1.png" width="60" height="60"></td>
 <td width="100" align="center">이준형</td>
 <td width="150">프론트엔드 개발<br>서버 환경 구축<br>영상 작업 등</td>
 
@@ -146,7 +141,6 @@
 	</td>
 </tr>
 <tr>
-<td width="100" align="center"><img src="/image/PROFILE2.png" width="60" height="60"></td>
 <td width="100" align="center">김성욱</td>
 <td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
 <td width="100" align="center">
@@ -159,7 +153,6 @@
 	</td>
 </tr>
     <tr>
-<td width="100" align="center"><img src="/image/PROFILE2.png" width="60" height="60"></td>
 <td width="100" align="center">조현민</td>
 <td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
 <td width="100" align="center">
