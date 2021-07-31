@@ -109,6 +109,10 @@
   <kbd><img src="/forReadMe/json.png" height="100"></kbd>
   <kbd><img src="/forReadMe/jstl.jpg" height="100"></kbd>
 </p>
+	
+## UI-Design<br>
+
+	<a href="https://github.com/koreait0000/MNDC/issues/43">UI-Design Link</a>
 
 ## 인트로영상<br>
 ![KakaoTalk_20210618_162033209](https://user-images.githubusercontent.com/65203794/122523431-f8cc5080-d051-11eb-8ab5-a682f5a929ea.gif)
