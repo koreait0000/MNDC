@@ -22,7 +22,7 @@ public class MainController {
     public String tilesTest(@AuthenticationPrincipal PrincipalDetails principalDetails) {
 //        UserEntity user = principalDetails.getUserEntity();
 //        System.out.println(user);
-        return "index";
+        return "main";
     }
 
     @PostMapping("/search")
