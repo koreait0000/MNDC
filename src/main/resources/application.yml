@@ -19,7 +19,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mndc
     username: root
-    password: koreait
+    password: 1234
 
 
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요

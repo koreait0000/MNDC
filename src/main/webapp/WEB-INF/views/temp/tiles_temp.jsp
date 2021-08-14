@@ -15,8 +15,5 @@
     <main>
         <tiles:insertAttribute name="content"/>
     </main>
-    <footer>
-        <tiles:insertAttribute name="footer"/>
-    </footer>
 </body>
 </html>
