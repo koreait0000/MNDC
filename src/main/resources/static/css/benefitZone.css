@@ -1,0 +1,41 @@
+
+.v1_345 {
+    width: 142px;
+    height: 31px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 975px;
+    left: 135px;
+    overflow: hidden;
+}
+
+.name {
+    color: #fff;
+}
+.v458_253 {
+    width: 453px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 229px;
+    left: 135px;
+    font-family: Roboto;
+    font-weight: Bold;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+}
+.v458_254 {
+    width: 342px;
+    color: rgba(124,121,121,1);
+    position: absolute;
+    top: 162px;
+    left: 142px;
+    font-family: Roboto;
+    font-weight: Thin;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+}
