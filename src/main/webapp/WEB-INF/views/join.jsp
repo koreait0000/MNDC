@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/common.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,8 +12,9 @@
 <div class="main-container">
     <form method="post" action="/join" id="form" class="main-wrap login-input-section-wrap">
         <h1>Join</h1>
+        <c:if test="${param.error eq 1}">이미 존재하는 아이디 또는 이메일입니다.</c:if>
     <sec:authorize access="isAnonymous()">
-        <div class="login-input-wrap"><input type="text" name="mid" placeholder="ID"></div>
+        <div class="login-input-wrap"><input type="text" name="mid" value="${param.mid}" placeholder="ID"></div>
         <div class="login-input-wrap"><span id="idError"></span></div>
         <div class="login-input-wrap"><input type="password" name="mpw" placeholder="PW"></div>
         <div class="login-input-wrap"><span id="pwError"></span></div>
