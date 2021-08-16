@@ -36,17 +36,16 @@ public class UserService {
     }
 
     public void join(UserEntity userEntity){
-        if(userEntity.getMid() != null && userEntity.getMpw() != null && userEntity.getEmail() != null ){
+        if(userEntity.getMid() != null && userEntity.getMpw() != null && userEntity.getEmail() != null){
             String authCd = commonUtils.getRandomDigit(6);
             String hashPw = new BCryptPasswordEncoder().encode(userEntity.getMpw());
-
             userEntity.setMauth(authCd);
             userEntity.setMrole("ROLE_USER");
             userEntity.setMnm(userEntity.getMid());
             userEntity.setMpw(hashPw);
             userRepository.save(userEntity);
 
-            String subject = "[mndc] 이메일 인증번호가 도착하였습니다.";
+            String subject = "[Almond] 이메일 인증번호가 도착하였습니다.";
             String txt = String.format("<div>이메일 계정을 인증받으시려면 아래 링크를 클릭해주세요. (혹시 잘못 전달되었다면 이 이메일을 무시하셔도 됩니다)</div>" +
                             "<a href=\"http://localhost:8090/auth?email=%s&authCd=%s\">링크를 클릭하여 이메일 인증</a>"
                     , userEntity.getEmail(), authCd);

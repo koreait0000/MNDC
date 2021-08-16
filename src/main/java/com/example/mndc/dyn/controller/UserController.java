@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -19,6 +20,7 @@ public class UserController extends Path {
     public String login(){
         return "login";
     }
+
     @GetMapping("/user")
     @ResponseBody
     public String user(){
@@ -27,7 +29,6 @@ public class UserController extends Path {
 
     @GetMapping("/join")
     public String join(){
-//        System.out.println(principalDetails.getUserEntity());
         return "join";
     }
 
@@ -42,7 +43,7 @@ public class UserController extends Path {
 //        }
         userService.join(userEntity);
 
-        return REDIRECT+LOGIN+"?needEmail=1";
+        return REDIRECT+LOGIN+"?auth=0";
     }
 
     @GetMapping("/auth")
