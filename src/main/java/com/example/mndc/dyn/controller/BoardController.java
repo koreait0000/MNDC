@@ -1,5 +1,6 @@
 package com.example.mndc.dyn.controller;
 
+import com.example.mndc.dyn.service.APIService;
 import com.example.mndc.dyn.service.BoardService;
 import com.example.mndc.dyn.service.FavService;
 import com.example.mndc.dyn.service.UserService;
@@ -27,6 +28,8 @@ public class BoardController extends Path {
     private UserService userService;
     @Autowired
     private FavService favService;
+    @Autowired
+    private APIService apiService;
 
     @GetMapping(LISTS)
     public String viewBoard(@RequestParam(defaultValue = "1") int type,
@@ -122,5 +125,19 @@ public class BoardController extends Path {
 //        favEntity.setM_pk(principalDetails.getUserEntity().getM_pk());
 
         return favService.favProc(favEntity,flag);
+    }
+
+    public String goSaleBoard(Model model,int startIndex, int endIndex){
+
+        model.addAttribute("list",apiService.searchSale(startIndex, endIndex));
+
+        return "";
+    }
+
+    public String goJobBoard(Model model,int page, String place, int category){
+
+        model.addAttribute("list",apiService.searchJob(page, place, category));
+
+        return "";
     }
 }

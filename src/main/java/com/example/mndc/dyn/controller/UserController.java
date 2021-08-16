@@ -1,21 +1,16 @@
 package com.example.mndc.dyn.controller;
 
 import com.example.mndc.dyn.service.UserService;
-import com.example.mndc.dyn.utils.UserPath;
-import com.example.mndc.sta.auth.PrincipalDetails;
+import com.example.mndc.dyn.utils.Path;
 import com.example.mndc.sta.model.UserEntity;
-import com.example.mndc.sta.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class UserController implements UserPath {
+public class UserController extends Path {
 
     @Autowired
     private UserService userService;

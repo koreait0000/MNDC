@@ -52,7 +52,7 @@ public class UserService {
                     , userEntity.getEmail(), authCd);
             emailService.sendMimeMessage(userEntity.getEmail(), subject, txt);
         }
-    }
+}
 
     public void auth(UserEntity userEntity){
         userRepository.updateAuth(userEntity);
