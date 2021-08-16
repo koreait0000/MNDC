@@ -13,18 +13,18 @@
     <form method="post" action="/join" id="form" class="main-wrap login-input-section-wrap">
         <h1>Join</h1>
     <sec:authorize access="isAnonymous()">
-        <div class="login-input-wrap"><input type="text" name="id" placeholder="ID"></div>
-        <div class="login-input-wrap"><input type="password" name="pw" placeholder="PW"></div>
-        <div class="login-input-wrap"><input type="password" name="pw2" placeholder="PW2"></div>
-        <div class="login-input-wrap"><input type="text" name="name" placeholder="NAME"></div>
+        <div class="login-input-wrap"><input type="text" name="mid" placeholder="ID"></div>
+        <div class="login-input-wrap"><span id="idError"></span></div>
+        <div class="login-input-wrap"><input type="password" name="mpw" placeholder="PW"></div>
+        <div class="login-input-wrap"><span id="pwError"></span></div>
+        <div class="login-input-wrap"><input type="password" name="mpw2" placeholder="PW2"></div>
+        <div class="login-input-wrap"><span id="pwError2"></span></div>
+<%--        <div class="login-input-wrap"><input type="text" name="mnm" placeholder="NAME"></div>--%>
     </sec:authorize>
         <div class="login-input-wrap"><input type="text" name="email" value="${user.email}" placeholder="EMAIL"></div>
-        <div class="login-input-wrap"><input type="text" name="phoneNum" placeholder="휴대폰 번호 '-' 없이 입력"></div>
-        <div class="login-button-wrap"><input type="submit" value="Join"></div>
-        <div id="google_recaptha" class="Easy-sgin-in-wrap">
-            <script src='https://www.google.com/recaptcha/api.js'></script>
-                <div class="g-recaptcha" data-sitekey="6Lf-IYQbAAAAAGNjne1KZ2lqMRe9KC_xw1pOVPlo"></div>
-        </div>
+        <div class="login-input-wrap"><span id="emailError"></span></div>
+<%--        <div class="login-input-wrap"><input type="text" name="phoneNum" placeholder="휴대폰 번호 '-' 없이 입력"></div>--%>
+        <div class="login-button-wrap"><input id="btn" type="button" value="Join"></div>
     </form>
 </div>
-
+<script src="/js/join.js"></script>

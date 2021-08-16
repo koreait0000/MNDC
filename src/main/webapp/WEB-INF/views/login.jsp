@@ -12,7 +12,7 @@
     <c:if test="${param.auth eq 1}">
         <div>이메일 인증이 완료되었습니다. 로그인을 시도해주세요.</div>
     </c:if>
-    <c:if test="${empty param.auth}">
+    <c:if test="${param.auth eq 0}">
         <div>이메일 인증을 시도해주세요</div>
     </c:if>
 

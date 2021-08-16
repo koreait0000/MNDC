@@ -16,5 +16,5 @@ let pwValue = formElem.mpw.value;
             mid: idValue,
             mpw: pwValue
         })
-    })
+    }).then(location.href='/')
 })

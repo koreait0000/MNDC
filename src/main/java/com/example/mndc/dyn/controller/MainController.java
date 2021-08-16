@@ -19,9 +19,7 @@ public class MainController {
     BoardService boardService;
 
     @GetMapping("/")
-    public String tilesTest(@AuthenticationPrincipal PrincipalDetails principalDetails) {
-//        UserEntity user = principalDetails.getUserEntity();
-//        System.out.println(user);
+    public String tilesTest() {
         return "main";
     }
 
