@@ -1,6 +1,7 @@
 package com.example.mndc.sta.config;
 
 import com.example.mndc.sta.handler.LoginSuccessHandler;
+import com.example.mndc.sta.handler.LoginSuccessHandler2;
 import com.example.mndc.sta.jwt.jwt.JwtAuthenticationFilter;
 import com.example.mndc.sta.jwt.jwt.JwtAuthorizationFilter;
 import com.example.mndc.sta.jwt.jwt.JwtProperties;
@@ -45,8 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and()
             .authorizeRequests()
-            .antMatchers("/","/auth", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**").permitAll()
-            .antMatchers("/user/**").authenticated() //인증만 되면 들어갈수 있는 주소
+            .antMatchers("/auth", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**").permitAll()
+            .antMatchers("/user/**","/").authenticated() //인증만 되면 들어갈수 있는 주소
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')")
             .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")

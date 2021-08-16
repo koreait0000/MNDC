@@ -35,8 +35,10 @@ public class UserService {
         return principalDetails.getUserEntity().getMpk().intValue() == boardDAO.selectInfoByBPk(b_pk).getM_pk();
     }
 
-    public void join(UserEntity userEntity){
-        if(userEntity.getMid() != null && userEntity.getMpw() != null && userEntity.getEmail() != null){
+    public int join(UserEntity userEntity){
+        if(userRepository.findByEmail(userEntity.getEmail()) != null || userRepository.findByMid(userEntity.getMid()) != null){
+            return 0;
+        }else if(userEntity.getMid() != null && userEntity.getMpw() != null && userEntity.getEmail() != null){
             String authCd = commonUtils.getRandomDigit(6);
             String hashPw = new BCryptPasswordEncoder().encode(userEntity.getMpw());
             userEntity.setMauth(authCd);
@@ -51,6 +53,7 @@ public class UserService {
                     , userEntity.getEmail(), authCd);
             emailService.sendMimeMessage(userEntity.getEmail(), subject, txt);
         }
+        return 1;
     }
 
     public void auth(UserEntity userEntity){
