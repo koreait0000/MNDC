@@ -11,7 +11,7 @@ class APIServiceTest {
     @Test
     void searchJob() {
         APIService apiService = new APIService();
-//        apiService.searchJob(1,"a",1);
+        apiService.searchJob(1,"a",1);
         apiService.searchSale(1,5);
     }
 }

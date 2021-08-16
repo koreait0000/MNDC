@@ -38,7 +38,7 @@ public class APIService {
                 = restTemplate.exchange(url, HttpMethod.GET,null,String.class);
 
         String data = responseEntity.getBody();
-        System.out.println(data);
+//        System.out.println(data);
 
         Gson gson = new Gson();
 

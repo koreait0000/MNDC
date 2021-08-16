@@ -127,6 +127,8 @@ public class BoardController extends Path {
         return favService.favProc(favEntity,flag);
     }
 
+
+    // TODO : mapping
     public String goSaleBoard(Model model,int startIndex, int endIndex){
 
         model.addAttribute("list",apiService.searchSale(startIndex, endIndex));
