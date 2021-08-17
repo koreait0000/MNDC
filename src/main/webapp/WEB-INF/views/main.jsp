@@ -20,7 +20,7 @@
             <div class="v1_75"></div>
             <div class="v1_76">
                 <div class="name"></div>
-            </div><span class="v454_42">lEARN MORE</span>
+            </div><span class="v454_42">LEARN MORE</span>
         </div>
         <div class="v1_80"></div>
         <div class="v1_88"></div>

@@ -8,6 +8,7 @@ import com.example.mndc.dyn.utils.Path;
 import com.example.mndc.sta.auth.PrincipalDetails;
 import com.example.mndc.sta.model.FavEntity;
 import com.example.mndc.sta.model.MilitaryUnitEntity;
+import com.example.mndc.sta.model.dto.APISaleDTO;
 import com.example.mndc.sta.model.dto.BoardDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -129,14 +130,14 @@ public class BoardController extends Path {
 
     @GetMapping("/benefitZone")
     public String goSaleBoard(Model model){
-        model.addAttribute("list",apiService.searchSale(1, 5));
+        /*model.addAttribute("list",apiService.searchSale(1, 5));*/
         return "board/benefitZone";
     }
 
     @GetMapping("/jobSearch")
-    public String goJobBoard(){
+    public String goJobBoard(Model model){
+        model.addAttribute("list",apiService.searchSale(1, 10));
 
-       /* model.addAttribute("list",apiService.searchJob(page, place, category));*/
         return "board/jobSearch";
     }
 
