@@ -45,16 +45,16 @@ public class APIService {
         APISaleDTO apiSaleDTO = gson.fromJson(data,APISaleDTO.class);
 
         List<APISaleDTO.DS.Row> list = apiSaleDTO.getDS_RCRT_RCRTMT_BLTNBD_MND().getRow();
-        for (APISaleDTO.DS.Row row : list){
+        /*for (APISaleDTO.DS.Row row : list){
             System.out.println(row);
-        }
+        }*/
 
         return list;
     }
 
 
 
-    public List searchJob(int page, String place, int category){
+    public List searchJob(String page, String place, String category){
         final String SEARCH_JOB = "https://vnet.go.kr/empn/jobsearchxml.do";
         final String PAGE = "page";
         final String PLACE = "place";
