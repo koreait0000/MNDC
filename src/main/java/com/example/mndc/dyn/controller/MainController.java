@@ -18,7 +18,7 @@ public class MainController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String tilesTest() {
         return "main";
     }

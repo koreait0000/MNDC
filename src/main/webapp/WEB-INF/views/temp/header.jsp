@@ -45,9 +45,14 @@
     </div>
   </div>
   <div class="v458_75"></div>
-  <div class="v458_76"></div><span class="v458_77">ALMOND</span><span class="v458_78">회원가입</span><span
-        class="v458_79">로그인</span><span class="v458_80">소개</span><span class="v458_81">공지사항</span><span
-        class="v458_82">혜택존</span><span class="v458_83">공고</span>
+  <div class="v458_76"></div>
+  <a href="/main"><span class="v458_77">ALMOND</span></a>
+  <a href="/join"><span class="v458_78">회원가입</span></a>
+  <a href="/login"><span class="v458_79">로그인</span></a>
+  <a href="#"><span class="v458_80">소개</span></a>
+  <a href="#"><span class="v458_81">공지사항</span></a>
+  <a href="/benefitZone"><span class="v458_82">혜택존</span></a>
+  <a href="/jobSearch"><span class="v458_83">공고</span></a>
 </div>
 </body>
 
