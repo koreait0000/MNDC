@@ -1,58 +1,96 @@
 package com.example.mndc.dyn.service;
 
-import com.example.mndc.sta.model.dto.JobDTO;
+import com.example.mndc.sta.model.dto.APIJobDTO;
+import com.example.mndc.sta.model.dto.APISaleDTO;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.List;
 
 @Service
 public class APIService {
-    private static final String MND_URL = "https://openapi.mnd.go.kr";
-
-    // API URL 적기
-    // 이거는 고정
-    private static final String KEY = "/3938313633333537323131313732313334";
-    private static final String TYPE = "/json";
-    // 해당 SERVICE들
-    //
-    private static final String MND_JOB = "DS_RCRT_RCRTMT_BLTNBD_MND";
-
-    private static Integer startIndex;
-    private static Integer endIndex;
-
-
-    @Autowired
-    RestTemplateBuilder restTemplateBuilder;
     @Autowired
     Gson gson;
 
-    public static <T> HttpEntity<T> setHeaders() {
+    public <T> HttpEntity<T> setHeaders() {
         HttpHeaders headers = new HttpHeaders();
         return new HttpEntity<T>(headers);
     }
 
-    public JobDTO getSummonerInfo(String id) {
-        RestTemplate restTemplate = restTemplateBuilder.build();
+    public List searchSale(int startIndex, int endIndex) {
+        final String MND_URL = "https://openapi.mnd.go.kr";
+        final String KEY = "/3938313633333537323131313732313334";
+        final String TYPE = "/json";
+        final String MND_JOB = "/DS_RCRT_RCRTMT_BLTNBD_MND";
+        RestTemplate restTemplate = new RestTemplate();
 
-        String url = String.format("%s%s%s%s/%d/%d",MND_URL,KEY,TYPE, MND_JOB,startIndex,endIndex);
-        HttpEntity<JobDTO> httpEntity = setHeaders();
+        String url = String.format("%s%s%s%s/%d/%d",MND_URL,KEY,TYPE, MND_JOB, startIndex, endIndex);
+        HttpEntity<APISaleDTO> httpEntity = setHeaders();
 
 
         ResponseEntity<String> responseEntity
                 = restTemplate.exchange(url, HttpMethod.GET,null,String.class);
 
         String data = responseEntity.getBody();
-        JobDTO jobDTO = null;
+//        System.out.println(data);
 
-        jobDTO = gson.fromJson(data,JobDTO.class);
+        Gson gson = new Gson();
 
+        APISaleDTO apiSaleDTO = gson.fromJson(data,APISaleDTO.class);
 
-        return jobDTO;
+        List<APISaleDTO.DS.Row> list = apiSaleDTO.getDS_RCRT_RCRTMT_BLTNBD_MND().getRow();
+        for (APISaleDTO.DS.Row row : list){
+            System.out.println(row);
+        }
+
+        return list;
     }
 
 
 
+    public List searchJob(int page, String place, int category){
+        final String SEARCH_JOB = "https://vnet.go.kr/empn/jobsearchxml.do";
+        final String PAGE = "page";
+        final String PLACE = "place";
+        final String CATEGORY = "category";
+        RestTemplate restTemplate = new RestTemplate();
+
+
+        // String query 날리기
+
+        HttpEntity<APIJobDTO.APIJobArticleDTO> httpEntity = setHeaders();
+
+        String url = SEARCH_JOB;
+
+        UriComponents builder = UriComponentsBuilder.fromHttpUrl(SEARCH_JOB)
+            .queryParam(PAGE,page)
+            .queryParam(PLACE,place)
+            .queryParam(CATEGORY,category)
+            .build(false);
+
+        ResponseEntity<String> responseEntity
+            = restTemplate.exchange(builder.toUriString(), HttpMethod.GET,null,String.class);
+        String data = responseEntity.getBody();
+
+        APIJobDTO apiJobDTO = null;
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            apiJobDTO = xmlMapper.readValue(data,APIJobDTO.class);
+        }catch (Exception e){}
+
+        List<APIJobDTO.APIJobArticleDTO> list = apiJobDTO.getArticles();
+
+        for (APIJobDTO.APIJobArticleDTO apiJobArticleDTO : list){
+            System.out.println(apiJobArticleDTO);
+        }
+
+
+        return list;
+    }
 }

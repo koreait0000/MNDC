@@ -3,7 +3,6 @@ package com.example.mndc.dyn.controller;
 import com.example.mndc.dyn.service.UserService;
 import com.example.mndc.dyn.utils.Path;
 import com.example.mndc.sta.model.UserEntity;
-import com.example.mndc.sta.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
