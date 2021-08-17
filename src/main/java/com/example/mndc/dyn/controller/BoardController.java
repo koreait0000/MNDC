@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(Path.BOARD)
 public class BoardController extends Path {
 
     @Autowired
@@ -128,18 +127,17 @@ public class BoardController extends Path {
     }
 
 
-    // TODO : mapping
-    public String goSaleBoard(Model model,int startIndex, int endIndex){
-
-        model.addAttribute("list",apiService.searchSale(startIndex, endIndex));
-
-        return "";
+    @GetMapping("/benefitZone")
+    public String goSaleBoard(Model model){
+        model.addAttribute("list",apiService.searchSale(1, 5));
+        return "board/benefitZone";
     }
 
-    public String goJobBoard(Model model,int page, String place, int category){
+    @GetMapping("/jobSearch")
+    public String goJobBoard(){
 
-        model.addAttribute("list",apiService.searchJob(page, place, category));
-
-        return "";
+       /* model.addAttribute("list",apiService.searchJob(page, place, category));*/
+        return "board/jobSearch";
     }
+
 }
