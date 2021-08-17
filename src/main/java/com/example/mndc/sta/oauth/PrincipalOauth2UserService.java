@@ -63,6 +63,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
                     .mrole(role)
                     .provider(provider)
                     .build();
+            System.out.println(userEntity);
             userRepository.save(userEntity);
         }
         //회원가입을 강제로 진행시킴
