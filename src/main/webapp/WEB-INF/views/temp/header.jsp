@@ -1,83 +1,54 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="/css/common.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <title>header</title>
-</head>
-<body id="top">
+<html>
 
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('/img/demo/backgrounds/camo.png');">
-  <!-- ################################################################################################ -->
-  <div class="wrapper row0">
-    <div id="topbar" class="hoc clear">
-      <div class="fl_left">
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
-          <li><i class="far fa-envelope rgtspace-5"></i> info@almond.com</li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
-      <div class="fl_right">
-        <!-- ################################################################################################ -->
-        <ul class="nospace">
-          <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
-          <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-          <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
-          <li id="searchform">
-            <div>
-              <form action="#" method="post">
-                <fieldset>
-                  <legend>Quick Search:</legend>
-                  <input type="text" placeholder="Enter search term&hellip;">
-                  <button type="submit"><i class="fas fa-search"></i></button>
-                </fieldset>
-              </form>
-            </div>
-          </li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="/css/header.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+<div class="v458_42">
+  <div class="v458_43"></div>
+  <div class="v458_44">
+    <div class="v458_45">
+      <div class="v458_46"></div>
+      <div class="v458_47"></div>
+      <div class="v458_48"></div>
+      <div class="v458_49"></div>
+      <div class="v458_50"></div>
+      <div class="v458_51"></div>
+      <div class="v458_52"></div>
+      <div class="v458_53"></div>
+      <div class="v458_54"></div>
+      <div class="v458_55"></div>
+      <div class="v458_56"></div>
+      <div class="v458_57"></div>
+      <div class="v458_58"></div>
+      <div class="v458_59"></div>
+      <div class="v458_60"></div>
+      <div class="v458_61"></div>
+      <div class="v458_62"></div>
+      <div class="v458_63"></div>
+      <div class="v458_64"></div>
+      <div class="v458_65"></div>
+      <div class="v458_66"></div>
+      <div class="v458_67"></div>
+      <div class="v458_68"></div>
+      <div class="v458_69"></div>
+      <div class="v458_70"></div>
+      <div class="v458_71"></div>
+      <div class="v458_72"></div>
+      <div class="v458_73"></div>
+      <div class="v458_74"></div>
     </div>
   </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div class="wrapper row1">
-    <header id="header" class="hoc clear">
-      <div id="logo" class="fl_left">
-        <!-- ################################################################################################ -->
-        <h1><a href="/">ALMOND</a></h1>
-        <!-- ################################################################################################ -->
-      </div>
-      <nav id="mainav" class="fl_right">
-        <!-- ################################################################################################ -->
-        <ul class="clear">
-          <li><a href="../index.html">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
-              <li><a href="#">NOTICE_BOARD</a></li>
-            </ul>
-          </li>
-          <li><a href="#">SERVICE-CENTER</a></li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </nav>
-    </header>
-  </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  </div>
-  <!-- JAVASCRIPTS -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery.backtotop.js"></script>
-  <script src="/js/jquery.mobilemenu.js"></script>
+  <div class="v458_75"></div>
+  <div class="v458_76"></div><span class="v458_77">ALMOND</span><span class="v458_78">회원가입</span><span
+        class="v458_79">로그인</span><span class="v458_80">소개</span><span class="v458_81">공지사항</span><span
+        class="v458_82">혜택존</span><span class="v458_83">공고</span>
+</div>
 </body>
+
 </html>

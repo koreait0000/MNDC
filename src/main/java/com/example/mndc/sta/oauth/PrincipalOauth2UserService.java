@@ -13,6 +13,7 @@ import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserServ
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -52,15 +53,17 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         String name = oauth2UserInfo.getName();
         String pw = bCryptPasswordEncoder.encode("password");
         String email = oauth2UserInfo.getEmail();
-        UserEntity userEntity = userRepository.findByMid(email);
+        UserEntity userEntity = userRepository.findByEmail(email);
         if(userEntity == null) {
             userEntity = userEntity.builder()
                     .mid(email)
                     .mpw(pw)
+                    .email(email)
                     .mnm(name)
                     .mrole(role)
                     .provider(provider)
                     .build();
+            System.out.println(userEntity);
             userRepository.save(userEntity);
         }
         //회원가입을 강제로 진행시킴
