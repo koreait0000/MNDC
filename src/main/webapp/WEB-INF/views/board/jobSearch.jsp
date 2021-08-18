@@ -14,15 +14,15 @@
 <table class="type09">
     <tr>
         <th scope="cols">제목</th>
-        <th scope="cols">지원서류</th>
+        <th scope="cols">지역</th>
         <th scope="cols">주관</th>
         <%--<th>bdbk_ctnt</th>--%>
     </tr>
     <c:forEach var="item" items="${list}">
         <tr>
-        <td scope="row"><c:out value="${item.title}"/></td>
-        <td><c:out value="${item.atchfl}"/></td>
-        <td scope="row"><c:out value="${item.organ}"/></td>
+            <td scope="row"><a href="${item.link}"><c:out value="${item.contents}"/></a></td>
+        <td><c:out value="${item.area}"/></td>
+        <td scope="row"><c:out value="${item.company}"/></td>
         <%--<td><c:out value="${item.bdbk_ctnt}"/></td>--%>
         </tr>
     </c:forEach>

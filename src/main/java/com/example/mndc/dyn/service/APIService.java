@@ -45,9 +45,9 @@ public class APIService {
         APISaleDTO apiSaleDTO = gson.fromJson(data,APISaleDTO.class);
 
         List<APISaleDTO.DS.Row> list = apiSaleDTO.getDS_RCRT_RCRTMT_BLTNBD_MND().getRow();
-        /*for (APISaleDTO.DS.Row row : list){
+        for (APISaleDTO.DS.Row row : list){
             System.out.println(row);
-        }*/
+        }
 
         return list;
     }
