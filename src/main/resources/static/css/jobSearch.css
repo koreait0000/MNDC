@@ -43,6 +43,8 @@ table.type09 {
     position: absolute;
     top: 340px;
     left: 142px;
+    right: 142px;
+    width: 80%;
     border-collapse: collapse;
     text-align: center;
     line-height: 1.5;

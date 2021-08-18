@@ -39,3 +39,87 @@
     opacity: 1;
     text-align: left;
 }
+.img-container-box{
+    position: absolute;
+    top: 360px;
+    left: 30px;
+}
+.img-container {
+    display: flex;
+
+}
+.img-item {
+    width: 90%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.column {
+    position: relative;
+}
+.column#caption1 .text {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.column#caption1 .text h1 {
+    margin: 0;
+    color: white;
+}
+.column#caption1:hover .text {
+    opacity: 1;
+
+}
+.column#caption1:hover img {
+    -webkit-filter: sepia(90%);
+}
+
+
+.column#caption2 .text {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.column#caption2 .text h1 {
+    margin: 0;
+    color: white;
+}
+.column#caption2:hover .text {
+    opacity: 1;
+
+}
+.column#caption2:hover img {
+    -webkit-filter: sepia(90%);
+}
+
+
+.column#caption3 .text {
+     position: absolute;
+     top: 1%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 10;
+     opacity: 0;
+     transition: all 0.8s ease;
+ }
+.column#caption3 .text h1 {
+    margin: 0;
+    color: white;
+}
+.column#caption3:hover .text {
+    opacity: 1;
+
+}
+.column#caption3:hover img {
+    -webkit-filter: sepia(90%);
+}

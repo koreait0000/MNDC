@@ -136,8 +136,7 @@ public class BoardController extends Path {
 
     @GetMapping("/jobSearch")
     public String goJobBoard(Model model){
-        model.addAttribute("list",apiService.searchSale(1, 10));
-
+        model.addAttribute("list",apiService.searchJob("1","j","1"));
         return "board/jobSearch";
     }
 
