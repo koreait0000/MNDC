@@ -13,9 +13,9 @@ mybatis:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://watchacha.ckhnav7yzn73.ap-northeast-2.rds.amazonaws.com:3306/almond
-    username: admin
-    password: koreait1234
+    url: jdbc:mariadb://docker-mysql-test.cbqdxzsgvikx.ap-northeast-2.rds.amazonaws.com:3306/mndc
+    username: user
+    password: password
 
 
 #TODO : 추후 실제 서비스때 계정 및 패스워드 변경 필요
