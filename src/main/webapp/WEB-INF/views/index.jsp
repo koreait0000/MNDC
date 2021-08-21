@@ -3,9 +3,42 @@
 <link rel="stylesheet" href="/css/index.css">
 <div id="container">
     <section class="bbs">
-        <div>
-
-        </div>
+<%--        광고--%>
+        <article class="banner">
+            <a href="/주소값"><img src="/img/imsi_banner.jpg" width="160px" height="600px"></a>
+            <i class="bi bi-x-square"></i>
+        </article>
+<%--        사이드바--%>
+        <article class="sidebar">
+            <div class="box_fit">
+                <h3 class="title">공고</h3>
+            </div>
+            <div class="box_content">
+                <table>
+                    <c:forEach var="i" begin="1" end="10">
+                        <tr>
+                            <td>${i}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                </ul>
+            </div>
+        </article>
+        <article class="sidebar">
+            <div class="box_fit">
+                <h3 class="title">혜택존</h3>
+            </div>
+            <div class="box_content">
+                <table>
+                    <c:forEach var="i" begin="1" end="10">
+                        <tr>
+                            <td>${i}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                </ul>
+            </div>
+        </article>
         <div class="bbs_list">
             <ul>
 <%--                베스트 글 or 공지글 ? 최대 3개 --%>
@@ -24,7 +57,7 @@
                 <c:forEach var="i" begin="1" end="20">
                     <li>
                         <div class="li">
-                            <a href="/주소값"><img src="../img/1.gif" width="120px" height="80px"></a>
+                            <a href="/주소값"><img src="/img/logo.png" width="120px" height="80px"></a>
                             <h3><a href="/주소값">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00</span>
@@ -36,27 +69,35 @@
                     </li>
                 </c:forEach>
             </ul>
-        </div>
-        <div class="search_bar">
-            <form action="" class="form">
-                <button type="submit" class="btn_search">
-                    <i class="bi bi-search"></i>
-                </button>
-                <input type="text" name="search" class="search_keyword" value="${param.search}">
-            </form>
-        </div>
-        <div class="page">
-            <a href="?page=${param.page-1}">
-                <i class="fa fa-angle-left"></i>
-                이전
-            </a>
-            <c:forEach var="i" begin="1" end="10">
-                <a href="?page=${i}">${i}</a>
-            </c:forEach>
-            <a href="?page=${param.page+1}">
-                다음
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <div class="search_bar">
+                <form action="" class="form">
+                    <button type="submit" class="btn_search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <input type="text" name="search" class="search_keyword" value="${param.search}">
+
+                    <select name="search_target" class="select">
+                        <option value="title_content">제목+내용</option>
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                        <option value="nickname">닉네임</option>
+                    </select>
+                </form>
+            </div>
+            <div class="page">
+                <a href="?page=${param.page-1}">
+                    <i class="fa fa-angle-left"></i>
+                    이전
+                </a>
+                <c:forEach var="i" begin="1" end="10">
+                    <a href="?page=${i}">${i}</a>
+                </c:forEach>
+                <a href="?page=${param.page+1}">
+                    다음
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 </div>
+<script src="/js/index.js"></script>
