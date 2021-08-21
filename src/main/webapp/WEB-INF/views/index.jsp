@@ -57,7 +57,7 @@
                 <c:forEach var="i" begin="1" end="20">
                     <li>
                         <div class="li">
-                            <a href="/주소값"><img src="/img/logo.png" width="120px" height="80px"></a>
+                            <a href="/주소값"><img src="/img/logo.png" width="120px" height="70px"></a>
                             <h3><a href="/주소값">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00</span>

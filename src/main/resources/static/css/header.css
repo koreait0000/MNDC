@@ -40,7 +40,7 @@ body {
 .v458_45 {
     width: 68px;
     height: 41px;
-    background: url("../images/logo.png");
+    /*background: url("../images/logo.png");*/
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -279,7 +279,7 @@ body {
 .v458_74 {
     width: 51px;
     height: 26px;
-    background: url("../images/v458_74.png");
+    /*background: url("../images/v458_74.png");*/
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

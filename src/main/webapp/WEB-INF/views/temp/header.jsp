@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-<link href="/css/header.css" rel="stylesheet" />
+<link href="/css/header.css" rel="stylesheet">
 <div class="v458_42">
   <div class="v458_43"></div>
   <a href="/main"><div class="v458_44">
