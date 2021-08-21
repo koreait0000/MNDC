@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping("/main")
     public String tilesTest() {
-        return "main";
+        return "index";
     }
 
     @PostMapping("/search")
