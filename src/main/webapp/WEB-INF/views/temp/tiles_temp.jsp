@@ -14,6 +14,9 @@
         <tiles:insertAttribute name="header"/>
     </header>
     <main>
+        <section class="row justify-content-md-center">
+            <tiles:insertAttribute name="subscription"/>
+        </section>
         <tiles:insertAttribute name="content"/>
     </main>
 

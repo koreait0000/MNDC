@@ -1,14 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-  <link href="/css/header.css" rel="stylesheet" />
-  <title>Document</title>
-</head>
-
-<body>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+<link href="/css/header.css" rel="stylesheet" />
 <div class="v458_42">
   <div class="v458_43"></div>
   <a href="/main"><div class="v458_44">
@@ -55,6 +47,3 @@
   <a href="/benefitZone"><span class="v458_82">혜택존</span></a>
   <a href="/jobSearch"><span class="v458_83">공고</span></a>
 </div>
-</body>
-
-</html>
