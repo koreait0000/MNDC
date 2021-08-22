@@ -97,6 +97,17 @@
                     <i class="fa fa-angle-right"></i>
                 </a>
             </div>
+            <footer>
+                <img src="/img/logo.png" width="120" height="70" class="footImg">
+                <div class="copyright">
+                    <address>
+                        <span>Copyright © www.fmkorea.com All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                    </address>
+                    <div id="about">
+                        <span>ALMOND 운영팀: help@almond.com | <a href="/about/policy">이용약관</a> | <a href="/about/privacy"><b>개인정보처리방침</b></a></span>
+                    </div>
+                </div>
+            </footer>
         </div>
     </section>
 </div>

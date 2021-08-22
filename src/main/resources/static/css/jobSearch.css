@@ -8,7 +8,6 @@
     opacity: 1;
     position: absolute;
     top: 975px;
-    left: 135px;
     overflow: hidden;
 }
 
@@ -20,7 +19,6 @@
     color: rgba(0,0,0,1);
     position: absolute;
     top: 229px;
-    left: 135px;
     font-family: Roboto;
     font-weight: Bold;
     font-size: 64px;
@@ -31,8 +29,6 @@
     width: 342px;
     color: rgba(124,121,121,1);
     position: absolute;
-    top: 162px;
-    left: 142px;
     font-family: Roboto;
     font-weight: Thin;
     font-size: 64px;
@@ -41,21 +37,21 @@
 }
 table.type09 {
     position: absolute;
-    top: 340px;
-    left: 142px;
-    right: 142px;
+    top: 110px;
     width: 80%;
     border-collapse: collapse;
     text-align: center;
     line-height: 1.5;
 
 }
+.type09{position: relative;}
 table.type09 thead th {
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
     color: #369;
     border-bottom: 3px solid #036;
+
 }
 table.type09 tbody th {
     width: 150px;
