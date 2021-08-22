@@ -43,7 +43,7 @@
   <a href="/join"><span class="v458_78">회원가입</span></a>
   <a href="/login"><span class="v458_79">로그인</span></a>
   <a href="#"><span class="v458_80">소개</span></a>
-  <a href="#"><span class="v458_81">공지사항</span></a>
+  <a href="/history"><span class="v458_81">역사존</span></a>
   <a href="/benefitZone"><span class="v458_82">혜택존</span></a>
   <a href="/jobSearch"><span class="v458_83">공고</span></a>
 </div>

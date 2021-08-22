@@ -140,4 +140,9 @@ public class BoardController extends Path {
         return "board/jobSearch";
     }
 
+    @GetMapping("/history")
+    public String goHistory(){
+        return "board/history";
+    }
+
 }
