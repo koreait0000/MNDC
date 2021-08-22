@@ -18,7 +18,7 @@ public class UserController extends Path {
 
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "user/login";
     }
 
     @GetMapping("/user")
@@ -29,7 +29,7 @@ public class UserController extends Path {
 
     @GetMapping("/join")
     public String join(){
-        return "join";
+        return "user/join";
     }
 
     @PostMapping("/join")
