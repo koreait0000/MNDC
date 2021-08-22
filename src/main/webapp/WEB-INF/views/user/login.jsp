@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/css/layout.css" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" href="/css/login.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="main-container">
     <h1>Login</h1>
     <c:if test="${param.auth eq 1}">
@@ -17,6 +18,8 @@
     <form method="post" id="form" action="/login" class="main-wrap login-input-section-wrap">
         <div class="login-input-wrap"><input type="text" name="mid" class="mid" placeholder="ID"></div>
         <div class="login-input-wrap password-wrap"><input type="password" name="mpw" class="mpw" placeholder="PW"></div>
+        <br>
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lf-IYQbAAAAAGNjne1KZ2lqMRe9KC_xw1pOVPlo" data-callback="recaptchaCallback"></div>
         <div class="login-button-wrap"><input type="button" name="button1" value="LOG IN"></div>
     </form>
     <div class="login-stay-sign-in">

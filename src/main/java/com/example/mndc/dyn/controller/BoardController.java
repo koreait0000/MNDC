@@ -26,6 +26,11 @@ public class BoardController extends Path {
         return "/main";
     }
 
+    @GetMapping(BOARD+WRITE)
+    public String write(){
+
+        return BOARD+WRITE;
+    }
 
     @GetMapping("/history")
     public String goHistory(){

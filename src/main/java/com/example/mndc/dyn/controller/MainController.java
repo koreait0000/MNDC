@@ -26,6 +26,7 @@ public class MainController {
     @GetMapping("/about/privacy")
     public void privacy(){
     }
+
     @GetMapping("/about/policy")
     public void policy(){
     }

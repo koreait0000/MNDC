@@ -53,6 +53,12 @@ public class PayController {
         }
     }
 
+    @GetMapping("/subscription/info")
+     public String subscription(){
+        //TODO: 결제창 구성
+        return "/subscription/info";
+    }
+
     @RequestMapping("/fail")
     public String failPayment(@RequestParam String message, @RequestParam String code, Model model) {
         model.addAttribute("message", message);

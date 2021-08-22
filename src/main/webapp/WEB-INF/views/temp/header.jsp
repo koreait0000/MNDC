@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
 <link href="/css/header.css" rel="stylesheet">
 <div class="v458_42">
@@ -41,7 +42,13 @@
   <div class="v458_76"></div>
   <a href="/main"><span class="v458_77">ALMOND</span></a>
   <a href="/join"><span class="v458_78">회원가입</span></a>
-  <a href="/login"><span class="v458_79">로그인</span></a>
+  <sec:authorize access="isAnonymous()">
+    <a href="/login"><span class="v458_79">로그인</span></a>
+  </sec:authorize>
+  <sec:authorize access="isAuthenticated()">
+    <a href="/logout"><span class="v458_79">로그아웃</span></a>
+  </sec:authorize>
+
   <a href="/history"><span class="v458_81">역사존</span></a>
 <%--  <a href="#"><span class="v458_80">소개</span></a>--%>
 <%--  <a href="#"><span class="v458_81">공지사항</span></a>--%>
