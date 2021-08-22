@@ -5,9 +5,6 @@ ul{ list-style: none; padding-left: 0px;}
 li{position: relative; padding: 5px 0; border-bottom: 1px solid #d4cfcf;}
 h3{ margin: 0px; font-size: 20px; }
 
-#container{margin: 0 auto; width: 1050px;}
-
-
 .title{ }
 .box_fit{padding: 16px 0 12px; margin: 0 13px; border-bottom: 1px dashed #ccc;}
 .box_content{padding: 14px 16px 3px;}
@@ -15,10 +12,14 @@ h3{ margin: 0px; font-size: 20px; }
 .banner {position: absolute; top:0; left: -160px; }
 .sidebar {width: 190px; float: right; border: 1px solid #ccc;}
 .sidebar:nth-child(2) { position: absolute; top: 315px; left: 860px;}
-.bbs .bbs_list{float: left; width: 850px; }
+.bbs .bbs_list {
+    float: left;
+    width: 850px;
+    border-bottom: 1px solid #afafaf;
+}
 .li img{position: absolute; left: 0px;}
 .li { padding-left: 120px; position: relative;}
-.best_list { background-color: #f6f6f6; }
+.best_list { background-color: #f6f6f6; position: relative; }
 .best_list > .li {padding-left: 0;}
 .best_list  h3:before { display: inline-block;
     margin: 0 0 0 3px;
@@ -32,7 +33,7 @@ h3{ margin: 0px; font-size: 20px; }
 .search_bar {padding: 10px 10px 0}
 .bbs_list{padding-left: 10px;}
 .form{position: relative}
-.btn_search{position: absolute; left: 129px; border-radius: 2px; top: 0; height: 25px; border: 0.1px solid #a7a7a7; background-color: white;}
+.btn_search{position: absolute; left: 129px; border-radius: 2px; height: 25px; border: 0.1px solid #a7a7a7; background-color: white;}
 .btn_search:hover{box-shadow: 1px 1px 1px 1px gray;}
 .search_keyword { width: 130px; cursor: auto; border-radius: 2px; border: 0.1px solid #a7a7a7;}
 .search_keyword:hover {box-shadow: 1px 1px 1px 1px gray;}

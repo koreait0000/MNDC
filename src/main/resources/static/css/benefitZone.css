@@ -19,8 +19,7 @@
     width: 453px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 229px;
-    left: 135px;
+    top: 75px;
     font-family: Roboto;
     font-weight: Bold;
     font-size: 64px;
@@ -31,8 +30,6 @@
     width: 342px;
     color: rgba(124,121,121,1);
     position: absolute;
-    top: 162px;
-    left: 142px;
     font-family: Roboto;
     font-weight: Thin;
     font-size: 64px;
@@ -41,8 +38,7 @@
 }
 .img-container-box{
     position: absolute;
-    top: 360px;
-    left: 30px;
+    top: 200px;
 }
 .img-container {
     display: flex;

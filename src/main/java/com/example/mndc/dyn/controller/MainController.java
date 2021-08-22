@@ -34,4 +34,11 @@ public class MainController {
 
         return "";
     }
+
+    @GetMapping("/about/privacy")
+    public void privacy(){
+    }
+    @GetMapping("/about/policy")
+    public void policy(){
+    }
 }

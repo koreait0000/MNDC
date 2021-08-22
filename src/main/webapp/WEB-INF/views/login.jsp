@@ -29,6 +29,17 @@
             <li><a href="/oauth2/authorization/facebook"><img class="login-lmg-size" src="/img/demo/ButtonImg/btnFacebook.png"></img></a></li>
             <li><a href="/oauth2/authorization/naver"><img class="login-lmg-size" src="/img/demo/ButtonImg/btnG.png"></img></a></li>
         </ul>
+        <footer style="top: 1000px;">
+            <img src="/img/logo.png" width="120" height="70" class="footImg">
+            <div class="copyright">
+                <address>
+                    <span>Copyright © www.almond.com All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                </address>
+                <div id="about">
+                    <span>ALMOND 운영팀: help@almond.com | <a href="/about/policy">이용약관</a> | <a href="/about/privacy"><b>개인정보처리방침</b></a></span>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
 <script src="/js/login.js"></script>

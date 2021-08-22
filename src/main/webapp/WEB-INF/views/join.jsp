@@ -27,5 +27,16 @@
 <%--        <div class="login-input-wrap"><input type="text" name="phoneNum" placeholder="휴대폰 번호 '-' 없이 입력"></div>--%>
         <div class="login-button-wrap"><input id="btn" type="button" value="Join"></div>
     </form>
+    <footer style="top: 1500px;">
+        <img src="/img/logo.png" width="120" height="70" class="footImg">
+        <div class="copyright">
+            <address>
+                <span>Copyright © www.almond.com All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+            </address>
+            <div id="about">
+                <span>ALMOND 운영팀: help@almond.com | <a href="/about/policy">이용약관</a> | <a href="/about/privacy"><b>개인정보처리방침</b></a></span>
+            </div>
+        </div>
+    </footer>
 </div>
 <script src="/js/join.js"></script>
