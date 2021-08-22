@@ -7,6 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface CmtDAO {
+    List<CmtEntity> selectCmtsByMpk(int mpk);
 
+    void insertCmt(CmtEntity cmtEntity);
+
+    void deleteCmtByCpk(int cpk);
+    void deleteCmtByBpk(int bpk);
 
 }

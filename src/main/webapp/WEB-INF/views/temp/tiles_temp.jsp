@@ -14,9 +14,6 @@
         <tiles:insertAttribute name="header"/>
     </header>
 <%--    클릭시 구독페이지로 가기--%>
-    <section id="banner">
-        <tiles:insertAttribute name="banner"/>
-    </section>
     <main>
         <section class="row justify-content-md-center">
             <tiles:insertAttribute name="subscription"/>

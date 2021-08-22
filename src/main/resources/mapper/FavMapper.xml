@@ -5,22 +5,22 @@
 <mapper namespace="com.example.mndc.dyn.dao.FavDAO">
     <insert id="insertFavUp">
         insert into fav
-            value (#{m_pk},#{b_pk})
+            value (#{mpk},#{bpk})
     </insert>
     <update id="updateFav">
         update fav
         set toggle = #{toggle}
-        where b_pk = #{b_pk}
-          and m_pk = #{m_pk}
+        where bpk = #{bpk}
+          and mpk = #{mpk}
     </update>
     <delete id="deleteFavDown">
         delete from fav
-        where b_pk = #{b_pk}
-          and m_pk = #{m_pk}
+        where bpk = #{bpk}
+          and mpk = #{mpk}
 </delete>
     <select id="selectFavCount">
         select count(*) from fav
-        where b_pk = #{b_pk}
+        where bpk = #{bpk}
     </select>
 
 </mapper>

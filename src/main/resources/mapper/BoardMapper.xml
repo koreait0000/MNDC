@@ -2,9 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.mndc.dyn.dao.BoardDAO">
-    <select id="selectBoardByType" resultType="BoardDTO">
+    <select id="selectBoardByType" resultType="BoardEntity">
         select * from board
-        where type = #{type}
+        where b_type = #{b_type}
     </select>
 
+    <select id="selectInfoByBPk" resultType="BoardEntity">
+        select * from board
+        where bpk = #{bpk}
+    </select>
+
+    <select id="selectBoardsByMpk" resultType="BoardEntity">
+        select * from board
+        where mpk = #{mpk}
+    </select>
 </mapper>

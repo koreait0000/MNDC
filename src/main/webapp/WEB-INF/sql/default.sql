@@ -25,7 +25,7 @@ create table user(
 drop table if exists user;
 
 create table board(
-    b_pk int AUTO_INCREMENT primary key,
+    bpk int AUTO_INCREMENT primary key,
     b_title varchar(30) not null,
     b_ctnt varchar(10000) not null,
     b_regdt datetime default now(),
@@ -33,34 +33,34 @@ create table board(
     b_view int default 0,
     b_type int default 0,
 
-    m_pk bigint,
+    mpk bigint,
     mu_pk int,
 
-    foreign key (m_pk) references user(mpk),
+    foreign key (mpk) references user(mpk),
     foreign key (mu_pk) references military_unit(mu_pk)
 );
 
 drop table if exists cmt;
 create table cmt(
-    c_pk int AUTO_INCREMENT primary key,
+    cpk int AUTO_INCREMENT primary key,
     c_ctnt varchar(100) not null ,
     c_regdt datetime default now(),
     c_alert tinyint(1) default 1,
 
-    b_pk int,
-    m_pk bigint,
+    bpk int,
+    mpk bigint,
 
-    foreign key (b_pk) references board(b_pk),
-    foreign key (m_pk) references user(mpk)
+    foreign key (bpk) references board(bpk),
+    foreign key (mpk) references user(mpk)
 );
 drop table if exists fav;
 create table fav(
-    m_pk bigint,
-    b_pk int,
+    mpk bigint,
+    bpk int,
     toggle tinyint(1) comment '0은 싫어요, 1은 좋아요',
-    primary key (m_pk,b_pk),
+    primary key (mpk,bpk),
 
-    foreign key (m_pk) references user(mpk),
-    foreign key (b_pk) references board(b_pk)
+    foreign key (mpk) references user(mpk),
+    foreign key (bpk) references board(bpk)
 );
 

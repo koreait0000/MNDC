@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Random;
-
 
 @Service
 public class UserService {
@@ -30,9 +27,9 @@ public class UserService {
         return principalDetails != null;
     }
     // 로그인 체크 + 계정일치 체크
-    public boolean isLoginMatch(PrincipalDetails principalDetails,int b_pk){
+    public boolean isLoginMatch(PrincipalDetails principalDetails,int bpk){
 
-        return principalDetails.getUserEntity().getMpk().intValue() == boardDAO.selectInfoByBPk(b_pk).getM_pk();
+        return principalDetails.getUserEntity().getMpk().intValue() == boardDAO.selectBoardByBPk(bpk).getMpk();
     }
 
     public int join(UserEntity userEntity){

@@ -2,7 +2,7 @@ insert into user
 value (1,'kim','1234',1,'ROLE_ADMIN','안녕',1,'ffff','2021-07-20');
 
 insert into board
-(b_title, b_ctnt, m_pk, mu_pk)
+(b_title, b_ctnt, mpk, mu_pk)
 values
 ('메롱1','메롱시티1',1,1),
 ('메롱2','메롱시티2',1,1),

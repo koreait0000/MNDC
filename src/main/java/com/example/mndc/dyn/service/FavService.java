@@ -2,7 +2,6 @@ package com.example.mndc.dyn.service;
 
 import com.example.mndc.dyn.dao.FavDAO;
 import com.example.mndc.sta.model.FavEntity;
-import com.example.mndc.sta.model.dto.BoardDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +33,5 @@ public class FavService {
         }
 
     }
-    public int cntFav(BoardDTO boardDTO){
-        // 해당 게시물의 좋아요 수 가져오기
-        return favDAO.selectFavCount(boardDTO);
-    }
+
 }
