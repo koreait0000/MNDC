@@ -3,7 +3,7 @@
 <link href="/css/header.css" rel="stylesheet">
 <div class="v458_42">
   <div class="v458_43"></div>
-  <a href="/main"><div class="v458_44">
+  <a href="/"><div class="v458_44">
     <div class="v458_45">
       <div class="v458_46"></div>
       <div class="v458_47"></div>
@@ -39,7 +39,7 @@
   </a>
   <div class="v458_75"></div>
   <div class="v458_76"></div>
-  <a href="/main"><span class="v458_77">ALMOND</span></a>
+  <a href="/"><span class="v458_77">ALMOND</span></a>
   <a href="/join"><span class="v458_78">회원가입</span></a>
   <a href="/login"><span class="v458_79">로그인</span></a>
   <a href="/history"><span class="v458_81">역사존</span></a>

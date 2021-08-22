@@ -54,10 +54,10 @@ public class APIService {
 
 
 
-    public List searchJob(String page, String place, String category){
+    public List searchJob(String page, String location, String category){
         final String SEARCH_JOB = "https://vnet.go.kr/empn/jobsearchxml.do";
         final String PAGE = "page";
-        final String PLACE = "place";
+        final String LOCATION = "location";
         final String CATEGORY = "category";
         RestTemplate restTemplate = new RestTemplate();
 
@@ -67,15 +67,16 @@ public class APIService {
         HttpEntity<APIJobDTO.APIJobArticleDTO> httpEntity = setHeaders();
 
         String url = SEARCH_JOB;
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(SEARCH_JOB)
+            .queryParam(PAGE,page);
+        if (!location.equals("0")) builder.queryParam(LOCATION,location);
+        if (!category.equals("0")) builder.queryParam(CATEGORY,category);
 
-        UriComponents builder = UriComponentsBuilder.fromHttpUrl(SEARCH_JOB)
-            .queryParam(PAGE,page)
-            .queryParam(PLACE,place)
-            .queryParam(CATEGORY,category)
-            .build(false);
+        UriComponents uri = builder.build();
+
 
         ResponseEntity<String> responseEntity
-            = restTemplate.exchange(builder.toUriString(), HttpMethod.GET,null,String.class);
+            = restTemplate.exchange(uri.toUriString(), HttpMethod.GET,null,String.class);
         String data = responseEntity.getBody();
 
         APIJobDTO apiJobDTO = null;
@@ -86,9 +87,9 @@ public class APIService {
 
         List<APIJobDTO.APIJobArticleDTO> list = apiJobDTO.getArticles();
 
-        for (APIJobDTO.APIJobArticleDTO apiJobArticleDTO : list){
-            System.out.println(apiJobArticleDTO);
-        }
+//        for (APIJobDTO.APIJobArticleDTO apiJobArticleDTO : list){
+//            System.out.println(apiJobArticleDTO);
+//        }
 
 
         return list;
