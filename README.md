@@ -1,5 +1,9 @@
 # ALMOND
 
+https://user-images.githubusercontent.com/81272766/130342491-54461206-787e-42c7-9e9c-31cf639f92ab.mp4
+
+### 참전용사 감사영상 <br>
+
 # 🔗제품 및 서비스의 핵심내용
 
 ### <a href="https://github.com/koreait0000/MNDC/issues/42">🔗더 알아보기</a>
