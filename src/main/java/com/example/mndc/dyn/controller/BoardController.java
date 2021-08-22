@@ -27,4 +27,9 @@ public class BoardController extends Path {
     }
 
 
+    @GetMapping("/history")
+    public String goHistory(){
+        return "board/history";
+    }
+
 }

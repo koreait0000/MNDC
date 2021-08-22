@@ -1,15 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-
-<head>
-    <link href="https://fonts.googleapis.com/css?family=TT+Hoves&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" />
-    <title>메인</title>
-</head>
-
-<body>
+<link href="https://fonts.googleapis.com/css?family=TT+Hoves&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+<link href="/css/main.css" rel="stylesheet" />
 <div class="v1_21"><span class="v1_22">PROJECT</span>
     <div class="name"></div>
     <div class="v1_53">
@@ -42,6 +35,3 @@
     <div class="v458_28"></div>
     <div class="v458_30"></div>
 </div>
-</body>
-
-</html>
