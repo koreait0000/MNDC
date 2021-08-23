@@ -1,0 +1,37 @@
+.img-container-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pay-btn{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.pay-btn:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.pay-btn:before, .pay-btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #1AAB8A;
+    transition: 400ms ease all;
+}
