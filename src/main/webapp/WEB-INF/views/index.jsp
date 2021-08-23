@@ -45,7 +45,7 @@
                 <c:forEach var="i" begin="1" end="2">
                     <li class="best_list">
                         <div class="li">
-                            <h3><a href="/주소값">title [댓글수]</a></h3>
+                            <h3><a href="/board/view?">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00 </span>
                                 <span class="author">/ nickname</span>
@@ -57,8 +57,8 @@
                 <c:forEach var="i" begin="1" end="20">
                     <li>
                         <div class="li">
-                            <a href="/주소값"><img src="/img/logo.png" width="120px" height="70px"></a>
-                            <h3><a href="/주소값">title [댓글수]</a></h3>
+                            <a href="/board/view?"><img src="/img/logo.png" width="120px" height="70px"></a>
+                            <h3><a href="/board/view?">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00</span>
                             </div>

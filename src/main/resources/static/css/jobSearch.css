@@ -10,7 +10,10 @@
     top: 975px;
     overflow: hidden;
 }
-
+.side { display: inline-block; padding: 9px; position: relative; right: 202px; top: 50px;
+}
+.fr {float: right;}
+main { margin-bottom: 300px;}
 .name {
     color: #fff;
 }

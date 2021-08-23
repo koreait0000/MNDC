@@ -1,0 +1,12 @@
+.board{}
+.board_title span {font-size: 17px;}
+.board_title{
+    padding: 11px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fcfcfc;
+    line-height: 1.5em;
+}
+
+.side { display: inline-block; padding: 9px;}
+.fr {float: right;}

@@ -10,7 +10,7 @@
         <div class="name"></div>
     </div><%--title, atchfl,organ, bdbk_ctnt--%>
     <span class="v458_254">구인구직</span>
-    <div>
+    <div class="side fr">
     <form action="/jobSearch" method="get" id="search">
         <select name="location">
         <c:forEach items="${locations}" var="item">
@@ -25,7 +25,7 @@
         <input type="submit" value="검색하기">
     </form>
     </div>
-    <table class="type09" border="1">
+    <table class="type09" border="1" style="position: relative;">
         <tr>
             <th scope="cols">제목</th>
             <th scope="cols">지역</th>
@@ -41,16 +41,16 @@
             </tr>
         </c:forEach>
     </table>
-    <footer style="top: 3500px;">
-        <img src="/img/logo.png" width="120" height="70" class="footImg">
-        <div class="copyright">
-            <address>
-                <span>Copyright © www.almond.com All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-            </address>
-            <div id="about">
-                <span>ALMOND 운영팀: help@almond.com | <a href="/about/policy">이용약관</a> | <a href="/about/privacy"><b>개인정보처리방침</b></a></span>
-            </div>
-        </div>
-    </footer>
 </div>
+<footer style="bottom: -250px; left: 280px;">
+    <img src="/img/logo.png" width="120" height="70" class="footImg">
+    <div class="copyright">
+        <address>
+            <span>Copyright © www.almond.com All rights reserved.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+        </address>
+        <div id="about">
+            <span>ALMOND 운영팀: help@almond.com | <a href="/about/policy">이용약관</a> | <a href="/about/privacy"><b>개인정보처리방침</b></a></span>
+        </div>
+    </div>
+</footer>
 <script src="/js/jobSearch.js"></script>
