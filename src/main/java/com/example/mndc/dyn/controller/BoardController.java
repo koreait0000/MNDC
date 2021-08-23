@@ -38,6 +38,11 @@ public class BoardController extends Path {
 
         return BOARD+WRITE;
     }
+    @GetMapping(BOARD+VIEW)
+    public String view(){
+
+        return BOARD+VIEW;
+    }
 
     @GetMapping("/history")
     public String goHistory(){

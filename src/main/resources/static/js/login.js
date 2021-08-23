@@ -33,7 +33,7 @@ function doVaildRecaptcha(){
                         }).catch(err =>{
                             console.log(err);
                         }).then(() =>{
-                            location.href= '/main';
+                            location.href= '/';
                         })
                         break;
                     }else{

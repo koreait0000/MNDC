@@ -46,8 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and()
             .authorizeRequests()
-            .antMatchers("/auth", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**","/main/**","/jobSearch/**","/benefitZone/**").permitAll()
-            .antMatchers("/user/**","/board/**").authenticated() //인증만 되면 들어갈수 있는 주소
+            .antMatchers("/auth", "/oauth2/**", "/login/**", "/join/**", "/css/**", "/js/**", "/img/**", "/favicon.ico/**","/main/**","/jobSearch/**","/benefitZone/**","/board/view").permitAll()
+            .antMatchers("/user/**","/board/write").authenticated() //인증만 되면 들어갈수 있는 주소
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
             //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')")
             .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
