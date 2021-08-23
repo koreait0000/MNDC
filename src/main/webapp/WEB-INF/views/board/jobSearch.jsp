@@ -10,7 +10,21 @@
         <div class="name"></div>
     </div><%--title, atchfl,organ, bdbk_ctnt--%>
     <span class="v458_254">구인구직</span>
-
+    <div>
+    <form action="/jobSearch" method="get" id="search">
+        <select name="location">
+        <c:forEach items="${locations}" var="item">
+            <option value="${item.key}">${item.value}</option>
+        </c:forEach>
+        </select>
+        <select name="category">
+        <c:forEach items="${categories}" var="item">
+            <option value="${item.key}">${item.value}</option>
+        </c:forEach>
+        </select>
+        <input type="submit" value="검색하기">
+    </form>
+    </div>
     <table class="type09" border="1">
         <tr>
             <th scope="cols">제목</th>

@@ -15,14 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-    @Autowired
-    BoardService boardService;
-
-    @GetMapping("/main")
-    public String tilesTest() {
-        return "index";
-    }
-
     @GetMapping("/about/privacy")
     public void privacy(){
     }
