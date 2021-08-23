@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link rel="stylesheet" href="/css/index.css">
 <div id="container">
     <section class="bbs">
@@ -83,6 +84,11 @@
                         <option value="nickname">닉네임</option>
                     </select>
                 </form>
+                <sec:authorize access="isAuthenticated()">
+                    <div class="btn_write">
+                        <button><a href="/board/write">글쓰기</a></button>
+                    </div>
+                </sec:authorize>
             </div>
             <div class="page">
                 <a href="?page=${param.page-1}">
