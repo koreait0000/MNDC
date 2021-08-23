@@ -28,8 +28,25 @@
         <div class="wrap">
             글내용
         </div>
+        <div class="comment">
+            <div>전체 댓글 0개</div>
+            <div class="fl">
+                <form action="/board/comment" method="post">
+                    <div class="cmt_txt_cont">
+                        <div class="cmt_write">
+                            <textarea id="memo" maxlength="400"></textarea>
+                        </div>
+                        <div class="cmt_cont_bottom">
+                            <div class="fr">
+                                <button type="submit" class="btn_blue">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <footer>
+    <footer style="bottom: -261px;">
         <img src="/img/logo.png" width="120" height="70" class="footImg">
         <div class="copyright">
             <address>
