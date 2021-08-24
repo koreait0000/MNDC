@@ -65,6 +65,14 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         return userEntity.getMid();
     }
 
+    public Long getMpk(){
+        return this.userEntity.getMpk();
+    }
+    public void setMpk(Long mpk){
+        this.userEntity.setMpk(mpk);
+    }
+
+
     //계정 만료 됬는지
     @Override
     public boolean isAccountNonExpired() {

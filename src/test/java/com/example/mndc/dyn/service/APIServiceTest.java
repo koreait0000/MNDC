@@ -5,6 +5,8 @@ import com.example.mndc.dyn.service.api.APIMNDService;
 import com.example.mndc.dyn.service.api.APIXMLService;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 class APIServiceTest {
 
     APIMNDService apimndService = new APIMNDService();
@@ -16,8 +18,14 @@ class APIServiceTest {
     }
 
     @Test
+    void asd() {
+        LocalDate date = LocalDate.now();
+        System.out.println(date.getMonthValue());
+        System.out.println(date.getYear());
+    }
+    @Test
     void searchMNDJob(){
-        apimndService.testPrint(apimndService.searchMndSale(1,5));
+        apimndService.testPrint(apimndService.searchMndJob(1,5));
     }
 
     @Test

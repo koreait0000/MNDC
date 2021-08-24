@@ -1,12 +1,14 @@
 package com.example.mndc.dyn.service.api;
 
-import com.example.mndc.sta.model.dto.APIBhJobDTO;
+import com.example.mndc.sta.model.dto.api.APIBhJobDTO;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
+@Service
 public class APIBHService extends APIService{
     public List<APIBhJobDTO.APIJobArticleDTO> searchBhJob(String page, String location, String category){
         final String TK_JOB = "https://vnet.go.kr/empn/jobsearchxml.do";
@@ -17,7 +19,6 @@ public class APIBHService extends APIService{
         UriComponents uri = builder.build();
 
         String data = requestData(uri.toUri(),null);
-        System.out.println(data);
 
         APIBhJobDTO aPITKJobDTO = null;
         try {

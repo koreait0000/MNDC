@@ -12,13 +12,13 @@
 <%--        사이드바--%>
         <article class="sidebar">
             <div class="box_fit">
-                <h3 class="title">공고</h3>
+                <h3 class="title">공고</h3><span style="float: right"><a href="/jobSearch">+더보기</a></span>
             </div>
             <div class="box_content">
                 <table>
-                    <c:forEach var="i" begin="1" end="10">
+                    <c:forEach var="i" items="${jobList}" varStatus="status">
                         <tr>
-                            <td>${i}</td>
+                            <td><a href="${i.link}"><div style="white-space: nowrap; width: 156px; overflow: hidden;text-overflow: ellipsis;">${status.count}.&nbsp;${i.company}</div></a></td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -27,13 +27,13 @@
         </article>
         <article class="sidebar">
             <div class="box_fit">
-                <h3 class="title">혜택존</h3>
+                <h3 class="title">혜택존</h3><span style="float: right"><a href="/benefitZone">+더보기</a></span>
             </div>
             <div class="box_content">
                 <table>
-                    <c:forEach var="i" begin="1" end="10">
+                    <c:forEach var="i" items="${saleList}" varStatus="status">
                         <tr>
-                            <td>${i}</td>
+                            <td><a href="${i.hmpg}"><div style="white-space: nowrap; width: 156px; overflow: hidden;text-overflow: ellipsis;">${status.count}.&nbsp;${i.instltnnm}</div></a></td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -43,47 +43,47 @@
         <div class="bbs_list">
             <ul>
 <%--                베스트 글 or 공지글 ? 최대 3개 --%>
-                <c:forEach var="i" begin="1" end="2">
-                    <li class="best_list">
-                        <div class="li">
-                            <h3><a href="/board/view?">title [댓글수]</a></h3>
-                            <div>
-                                <span class="regdate">2021.08.21 00:00:00 </span>
-                                <span class="author">/ nickname</span>
-                            </div>
-                        </div>
-                    </li>
-                </c:forEach>
+<%--                <c:forEach var="i" begin="1" end="2">--%>
+<%--                    <li class="best_list">--%>
+<%--                        <div class="li">--%>
+<%--                            <h3><a href="/board/view?">title [댓글수]</a></h3>--%>
+<%--                            <div>--%>
+<%--                                <span class="regdate">2021.08.21 00:00:00 </span>--%>
+<%--                                <span class="author">/ nickname</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
+<%--                </c:forEach>--%>
 <%--                최신글--%>
-                <c:forEach var="i" begin="1" end="20">
+                <c:forEach var="i" items="${list}">
                     <li>
-                        <div class="li">
-                            <a href="/board/view?"><img src="/img/logo.png" width="120px" height="70px"></a>
-                            <h3><a href="/board/view?">title [댓글수]</a></h3>
+                        <div class="li" onclick="location.href='/board/view?bpk=${i.bpk}'">
+                            <img src="/img/logo.png" width="120px" height="70px">
+                            <h3>${i.b_title}[${i.b_view}]</h3>
                             <div>
-                                <span class="regdate">2021.08.21 00:00:00</span>
+                                <span class="regdate">${i.b_regdt}</span>
                             </div>
                             <div>
-                                <span class="author">nickname</span>
+                                <span class="author">${i.mnm}</span>
                             </div>
                         </div>
                     </li>
                 </c:forEach>
             </ul>
             <div class="search_bar">
-                <form action="" class="form">
-                    <button type="submit" class="btn_search">
-                        <i class="bi bi-search"></i>
-                    </button>
-                    <input type="text" name="search" class="search_keyword" value="${param.search}">
+<%--                <form action="" class="form">--%>
+<%--                    <button type="submit" class="btn_search">--%>
+<%--                        <i class="bi bi-search"></i>--%>
+<%--                    </button>--%>
+<%--                    <input type="text" name="search" class="search_keyword" value="${param.search}">--%>
 
-                    <select name="search_target" class="select">
-                        <option value="title_content">제목+내용</option>
-                        <option value="title">제목</option>
-                        <option value="content">내용</option>
-                        <option value="nickname">닉네임</option>
-                    </select>
-                </form>
+<%--                    <select name="search_target" class="select">--%>
+<%--                        <option value="title_content">제목+내용</option>--%>
+<%--                        <option value="title">제목</option>--%>
+<%--                        <option value="content">내용</option>--%>
+<%--                        <option value="nickname">닉네임</option>--%>
+<%--                    </select>--%>
+<%--                </form>--%>
                 <sec:authorize access="isAuthenticated()">
                     <div class="btn_write">
                         <button><a href="/board/write">글쓰기</a></button>
@@ -95,7 +95,7 @@
                     <i class="fa fa-angle-left"></i>
                     이전
                 </a>
-                <c:forEach var="i" begin="1" end="10">
+                <c:forEach var="i" begin="1" end="${maxPage}">
                     <a href="?page=${i}">${i}</a>
                 </c:forEach>
                 <a href="?page=${param.page+1}">

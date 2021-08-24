@@ -18,21 +18,41 @@
     <div class="img-container-box">
         <div class="img-container">
             <div>
-                <a href="#" class="column" id="caption1">
+                <a href="/benefitZone/food" class="column" id="caption1">
                     <img class="img-item" src="img/food.jpg">
                     <span class="text"><h1>음식</h1></span>
                 </a>
             </div>
             <div>
-                <a href="#" class="column" id="caption2">
+                <a href="/benefitZone/tour" class="column" id="caption2">
                     <img class="img-item" src="img/hotel.jpg">
                     <span class="text"><h1>관광</h1></span>
                 </a>
             </div>
             <div>
-                <a href="#" class="column" id="caption3">
+                <a href="/benefitZone/movie" class="column" id="caption3">
                     <img class="img-item" src="img/movie.jpg">
                     <span class="text"><h1>영화</h1></span>
+                </a>
+            </div>
+        </div>
+        <div class="img-container">
+            <div>
+                <a href="/benefitZone/military" class="column" id="caption4">
+                    <img class="img-item" src="/img/military.jpg">
+                    <span class="text"><h1>군혜택</h1></span>
+                </a>
+            </div>
+            <div>
+                <a href="/benefitZone/military" class="column" id="caption5" style="visibility: hidden">
+                    <img class="img-item" src="/img/military.jpg">
+                    <span class="text"><h1>군혜택</h1></span>
+                </a>
+            </div>
+            <div>
+                <a href="/benefitZone/military" class="column" id="caption6" style="visibility: hidden">
+                    <img class="img-item" src="/img/military.jpg">
+                    <span class="text"><h1>군혜택</h1></span>
                 </a>
             </div>
         </div>

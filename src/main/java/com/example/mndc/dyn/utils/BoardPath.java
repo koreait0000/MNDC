@@ -8,6 +8,11 @@ public interface BoardPath{
     String WRITE = "/write";
     String MODIFY = "/modify";
     String DELETE = "/delete";
+    String BENETFITZONE = "/benefitZone";
+    String BENETFITZONEList = "/benefitZoneList";
+    String ADDLIKE = "/addLike";
+    String COMMNET = "/comment";
+    String CMT = "/cmt";
 }
 
 

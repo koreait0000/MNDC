@@ -2,18 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.mndc.dyn.dao.BoardDAO">
-    <select id="selectBoardByType" resultType="BoardEntity">
-        select * from board
-        where b_type = #{b_type}
+    <sql id="like">
+        select count(*) from fav
+        where bpk = #{bpk}
+    </sql>
+    <select id="selectBoardByType" resultType="BoardDTO">
+        select b.*, u.mnm from board b
+        inner join user u
+        on b.mpk = u.mpk
+        limit #{startIdx},#{endIdx}
     </select>
 
-    <select id="selectInfoByBPk" resultType="BoardEntity">
-        select * from board
+    <select id="selectBoardByBPk" resultType="BoardDTO">
+        select b.*, u.mnm, (<include refid="like"></include>) as b_like
+               from board b
+        inner join user u
+        on b.mpk = u.mpk
         where bpk = #{bpk}
     </select>
+
+    <update id="upCount">
+        update board set b_view = b_view+1 where bpk = #{bpk}
+    </update>
 
     <select id="selectBoardsByMpk" resultType="BoardEntity">
         select * from board
         where mpk = #{mpk}
     </select>
+    <insert id="insertBoard">
+        insert into board(b_title,b_ctnt,mpk) value(#{b_title},#{b_ctnt},#{mpk})
+    </insert>
+    <select id="selectFavByMpkBpk" resultType="int">
+        select count(*)
+        from fav
+        where mpk = ${mpk}
+        and bpk = ${bpk}
+    </select>
+    <select id="selectBoardCount" resultType="int">
+        select count(*) from board
+    </select>
+
+    <delete id="delBoard">
+        delete from board where bpk = #{bpk}
+    </delete>
 </mapper>

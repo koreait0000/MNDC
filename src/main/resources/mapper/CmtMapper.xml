@@ -6,25 +6,14 @@
         select * from cmt
         where mpk = #{mpk}
     </select>
-<!--    <select id="selectUnreadInfoByMpk">-->
-<!--        select *-->
-<!--        from cmt-->
-<!--        where bpk =-->
-<!--              (-->
-<!--                  select bpk-->
-<!--                  from board-->
-<!--                  where board.mpk = #{mpk}-->
-<!--              )-->
-<!--        and c_alert = 1-->
-<!--    </select>-->
-<!--    <update id="updateCAlertByCpk">-->
-<!--        update cmt-->
-<!--        set c_alert = 0-->
-<!--        where cpk = #{cpk}-->
-<!--    </update>-->
+    <select id="selectCmtsByBpk" resultType="CmtDTO">
+        select c.*, u.mnm from cmt c
+        inner join user u on c.mpk = u.mpk
+        where bpk = #{bpk}
+    </select>
     <update id="insertCmt">
         insert into cmt (c_ctnt, bpk, mpk)
-        values (#{c_cnt},#{bpk},#{mpk});
+        values (#{c_ctnt},#{bpk},#{mpk});
     </update>
     <delete id="deleteCmtByCpk">
         delete from cmt

@@ -9,7 +9,7 @@ h3{ margin: 0px; font-size: 20px; }
 .btn_write button { background-color: white;}
 .btn_write button a {color: inherit;}
 
-.title{ }
+.title{ display: inline;}
 .box_fit{padding: 16px 0 12px; margin: 0 13px; border-bottom: 1px dashed #ccc;}
 .box_content{padding: 14px 16px 3px;}
 .bbs {position: relative;}

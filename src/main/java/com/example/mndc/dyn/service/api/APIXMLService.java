@@ -1,6 +1,6 @@
 package com.example.mndc.dyn.service.api;
 
-import com.example.mndc.sta.model.dto.*;
+import com.example.mndc.sta.model.dto.api.*;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -77,7 +77,7 @@ public class APIXMLService extends APIService{
 
         return apitkRecriation.getBody().getItems();
     }
-    public List<APITKEvent.Body.Item> searchTKEvent(String sigunNo){
+    public List<APITKEventDTO.Body.Item> searchTKEvent(String sigunNo){
         final String TK_EVENT = "http://data.gb.go.kr/opendata/service/rest/standardEventInformation/getRecordList";
 
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(TK_EVENT)
@@ -86,11 +86,11 @@ public class APIXMLService extends APIService{
 
         String data = requestTKData(builder.build().toUriString());
 
-        APITKEvent apitkEvent = null;
+        APITKEventDTO apitkEvent = null;
 
         try {
             XmlMapper xmlMapper = new XmlMapper();
-            apitkEvent = xmlMapper.readValue(data, APITKEvent.class);
+            apitkEvent = xmlMapper.readValue(data, APITKEventDTO.class);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -175,6 +175,7 @@ public class APIXMLService extends APIService{
 
 
     public String requestTKData(String uri) {
+        System.out.println(uri);
         StringBuilder sb = new StringBuilder();
         try {
             URL url = new URL(uri);

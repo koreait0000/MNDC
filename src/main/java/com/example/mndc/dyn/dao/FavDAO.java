@@ -8,6 +8,6 @@ public interface FavDAO {
     int insertFav(FavEntity favEntity);
     int updateFav(FavEntity favEntity);
     int deleteFav(FavEntity favEntity);
-
-
+    int selectFavCount(FavEntity favEntity);
+    int selectFavByMpkBpk(FavEntity favEntity);
 }

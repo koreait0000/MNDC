@@ -3,8 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.mndc.dyn.dao.FavDAO">
-    <insert id="insertFavUp">
-        insert into fav
+    <insert id="insertFav">
+        insert into fav(mpk, bpk)
             value (#{mpk},#{bpk})
     </insert>
     <update id="updateFav">
@@ -13,14 +13,18 @@
         where bpk = #{bpk}
           and mpk = #{mpk}
     </update>
-    <delete id="deleteFavDown">
+    <delete id="deleteFav">
         delete from fav
         where bpk = #{bpk}
           and mpk = #{mpk}
-</delete>
-    <select id="selectFavCount">
+    </delete>
+    <select id="selectFavCount" resultType="Int">
         select count(*) from fav
         where bpk = #{bpk}
     </select>
-
+    <select id="selectFavByMpkBpk" resultType="Int">
+        select count(*) from fav
+        where bpk = #{bpk}
+        and mpk = #{mpk}
+    </select>
 </mapper>

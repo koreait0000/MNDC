@@ -1,6 +1,7 @@
 package com.example.mndc.dyn.service;
 
 import com.example.mndc.dyn.dao.FavDAO;
+import com.example.mndc.sta.auth.PrincipalDetails;
 import com.example.mndc.sta.model.FavEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,19 @@ public class FavService {
                 return 0;
         }
 
+    }
+
+    public int configFav(FavEntity favEntity){
+        boolean flag = checkFav(favEntity);
+        System.out.println(flag);
+        if (flag) favDAO.insertFav(favEntity);
+        else favDAO.deleteFav(favEntity);
+
+        return favDAO.selectFavCount(favEntity);
+    }
+
+    public boolean checkFav(FavEntity favEntity){
+        return 0==favDAO.selectFavByMpkBpk(favEntity);
     }
 
 }

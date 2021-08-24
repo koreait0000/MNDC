@@ -1,7 +1,7 @@
 package com.example.mndc.dyn.service.api;
 
-import com.example.mndc.sta.model.dto.APIMNDJobDTO;
-import com.example.mndc.sta.model.dto.APIMNDSaleDTO;
+import com.example.mndc.sta.model.dto.api.APIMNDJobDTO;
+import com.example.mndc.sta.model.dto.api.APIMNDSaleDTO;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
 
