@@ -30,4 +30,12 @@ public class APIData {
 
         return insertData(categories);
     }
+
+    public static List<HashMapDTO> getEventCategories(){
+        String[] categories ={
+                "전체","포항시","경주시","김천시","안동시","구미시","영주시","영천시","상주시","문경시","경산시","군위군","의성군","청송군","영양군","영덕군","청도군","고령군","성주군","칠곡군","예천군","봉화군","울진군","울릉군"
+        };
+
+        return insertData(categories);
+    }
 }

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link rel="stylesheet" href="/css/index.css">
 <div id="container">
     <section class="bbs">
@@ -45,7 +46,7 @@
                 <c:forEach var="i" begin="1" end="2">
                     <li class="best_list">
                         <div class="li">
-                            <h3><a href="/주소값">title [댓글수]</a></h3>
+                            <h3><a href="/board/view?">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00 </span>
                                 <span class="author">/ nickname</span>
@@ -57,8 +58,8 @@
                 <c:forEach var="i" begin="1" end="20">
                     <li>
                         <div class="li">
-                            <a href="/주소값"><img src="/img/logo.png" width="120px" height="70px"></a>
-                            <h3><a href="/주소값">title [댓글수]</a></h3>
+                            <a href="/board/view?"><img src="/img/logo.png" width="120px" height="70px"></a>
+                            <h3><a href="/board/view?">title [댓글수]</a></h3>
                             <div>
                                 <span class="regdate">2021.08.21 00:00:00</span>
                             </div>
@@ -83,6 +84,11 @@
                         <option value="nickname">닉네임</option>
                     </select>
                 </form>
+                <sec:authorize access="isAuthenticated()">
+                    <div class="btn_write">
+                        <button><a href="/board/write">글쓰기</a></button>
+                    </div>
+                </sec:authorize>
             </div>
             <div class="page">
                 <a href="?page=${param.page-1}">

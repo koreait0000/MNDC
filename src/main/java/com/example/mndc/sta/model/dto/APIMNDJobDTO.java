@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class APISaleDTO {
+public class APIMNDJobDTO {
     private DS DS_RCRT_RCRTMT_BLTNBD_MND;
 
     @Data

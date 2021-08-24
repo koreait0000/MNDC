@@ -1,0 +1,34 @@
+.board{}
+.board_title span {font-size: 17px;}
+.board_title{
+    padding: 11px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fcfcfc;
+    line-height: 1.5em;
+}
+.comment{position: relative;
+    border-top: 2px solid #3b4890;
+    border-bottom: 2px solid #3b4890;}
+
+#memo {width: 956px;
+    height: 78px;
+    padding: 13px;
+    border: 1px solid #cecdce;
+    background: #fff;
+    font-family: '굴림',Gulim;
+    font-size: 13px;
+    color: #333;
+    line-height: 18px;}
+.cmt_cont_bottom{
+    margin-top: 8px;
+}
+.btn_blue{
+    background: #3b4890;
+    border-color: #29367c;
+    text-shadow: 0px -1px #1d2761;
+    color: #fff;
+}
+.side { display: inline-block; padding: 9px;}
+.fl {float: left;}
+.fr {float: right;}

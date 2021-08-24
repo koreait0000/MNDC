@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class APIJobDTO {
+public class APIBhJobDTO {
     private String title;
     private String total_count;
     private String category;
