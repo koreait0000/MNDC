@@ -29,7 +29,7 @@
         <h1>Easier sign in</h1>
         <ul class="sign-button-list">
             <li><a href="/oauth2/authorization/google"><img class="login-lmg-size" src="/img/demo/ButtonImg/btnGoogle.png"></img></a></li>
-            <li><a href="/oauth2/authorization/facebook"><img class="login-lmg-size" src="/img/demo/ButtonImg/btnFacebook.png"></img></a></li>
+            <li><a href="/oauth2/authorization/facebook"><img class="login-lmg-size" src="/img/demo/ButtonImg/BtnFacebook.png"></img></a></li>
             <li><a href="/oauth2/authorization/naver"><img class="login-lmg-size" src="/img/demo/ButtonImg/btnG.png"></img></a></li>
         </ul>
         <footer style="top: 1000px;">
