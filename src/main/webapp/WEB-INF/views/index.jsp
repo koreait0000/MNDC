@@ -58,7 +58,7 @@
                 <c:forEach var="i" items="${list}">
                     <li>
                         <div class="li" onclick="location.href='/board/view?bpk=${i.bpk}'">
-                            <img src="/img/logo.png" width="120px" height="70px">
+<%--                            <img src="/img/logo.png" width="120px" height="70px">--%>
                             <h3>${i.b_title}[${i.b_view}]</h3>
                             <div>
                                 <span class="regdate">${i.b_regdt}</span>
