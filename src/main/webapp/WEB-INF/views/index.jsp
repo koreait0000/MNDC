@@ -42,24 +42,18 @@
         </article>
         <div class="bbs_list">
             <ul>
-<%--                베스트 글 or 공지글 ? 최대 3개 --%>
-<%--                <c:forEach var="i" begin="1" end="2">--%>
-<%--                    <li class="best_list">--%>
-<%--                        <div class="li">--%>
-<%--                            <h3><a href="/board/view?">title [댓글수]</a></h3>--%>
-<%--                            <div>--%>
-<%--                                <span class="regdate">2021.08.21 00:00:00 </span>--%>
-<%--                                <span class="author">/ nickname</span>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </li>--%>
-<%--                </c:forEach>--%>
-<%--                최신글--%>
                 <c:forEach var="i" items="${list}">
-                    <li>
+                    <c:if test="${i.b_type eq 1}">
+                        <li class="best_list">
+                    </c:if>
+                    <c:if test="${i.b_type eq 0}">
+                        <li>
+                    </c:if>
                         <div class="li" onclick="location.href='/board/view?bpk=${i.bpk}'">
-<%--                            <img src="/img/logo.png" width="120px" height="70px">--%>
-                            <h3>${i.b_title}[${i.b_view}]</h3>
+                            <c:if test="${i.b_type eq 2}">
+                                <img src="/img/images.jpg" width="120px" height="70px">
+                            </c:if>
+                            <h3>${i.b_title} [${i.b_view}]</h3>
                             <div>
                                 <span class="regdate">${i.b_regdt}</span>
                             </div>
@@ -103,7 +97,7 @@
                     <i class="fa fa-angle-right"></i>
                 </a>
             </div>
-            <footer>
+            <footer style="bottom: -1300px;">
                 <img src="/img/logo.png" width="120" height="70" class="footImg">
                 <div class="copyright">
                     <address>

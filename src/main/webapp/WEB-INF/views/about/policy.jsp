@@ -2,7 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="container">
-    <div><a href="/">통합 규정 링크</a></div>
+    <div><a href="http://localhost:8080/board/view?bpk=7">통합 규정 링크</a></div>
     <br>
     <div><b>이용약관</b></div>
     <br>

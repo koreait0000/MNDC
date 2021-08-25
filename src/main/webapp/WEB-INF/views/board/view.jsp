@@ -13,11 +13,11 @@
                 </div>
                 <div class="side fr">
                     <span>${board.b_regdt}</span>
-                </div>fgbbfg
+                </div>
             </div>
             <div class="board_info">
                 <div class="side">
-                    <a href="#"><span>닉네임 : ${board.mnm}</span></a>
+                    <span>닉네임: ${board.mnm}</span>
                 </div>
                 <div class="side fr">
                     <span>조회수 : ${board.b_view}</span>

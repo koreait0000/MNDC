@@ -22,14 +22,15 @@ h3{ margin: 0px; font-size: 20px; }
     border-bottom: 1px solid #afafaf;
 }
 .li img{position: absolute; left: 0px;}
-.li { padding-left: 120px; position: relative;}
+.li:hover {background-color: #1AAB8A}
+.li { padding-left: 130px; position: relative;}
 .best_list { background-color: #f6f6f6; position: relative; }
 .best_list > .li {padding-left: 0;}
 .best_list  h3:before { display: inline-block;
     margin: 0 0 0 3px;
     padding: 2px 3px 1px;
     border-radius: 5px;
-    content: "화제 or 공지";
+    content: "공지";
     background: #999;
     color: #fff;
     font: 12px Dotum,"돋움",Gulim,"굴림";}
