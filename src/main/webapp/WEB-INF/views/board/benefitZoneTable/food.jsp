@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link href="/css/benefitZone.css" rel="stylesheet"/>
 <tr>
     <th scope="cols">상호명</th>
     <th scope="cols">카테고리</th>

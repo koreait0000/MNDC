@@ -36,7 +36,7 @@
         <div style="text-align: center; margin: 10px">
             <button id="like-btn" data-bpk="${board.bpk}" data-mpk="${mpk}">추천하기 ${board.b_like}</button>
             <c:if test="${board.mpk eq mpk}">
-                <button onclick="location.href=`/board/delete?bpk=${board.bpk}`">삭제하기</button>
+                <button style="float: right" onclick="location.href=`/board/delete?bpk=${board.bpk}`">삭제하기</button>
             </c:if>
         </div>
 <%--        </sec:authorize>--%>

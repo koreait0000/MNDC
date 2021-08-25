@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=TT+Hoves&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
 <link href="/css/jobSearch.css" rel="stylesheet"/>
+<link href="/css/benefitZoneList.css" rel="stylesheet"/>
 
 <div id="container">
     <div class="v1_345">

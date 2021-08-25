@@ -92,11 +92,11 @@ public class BoardController extends Path {
                                        HttpSession session,
                                        @RequestParam MultipartFile upload) throws Exception{
         // 여기서 저장경로 지정. 난 내 PC기준으로 했음
-        String uploadPath = "~/imsi";
+        String uploadPath = "/img/";
         String filename = upload.getOriginalFilename();
-//        System.out.println("filename : "+filename);
+        System.out.println("filename : "+filename);
         String ex = "."+ FilenameUtils.getExtension(filename);
-//        System.out.println("ex : "+ex);
+        System.out.println("ex : "+ex);
 
         UUID uid = UUID.randomUUID();
 //
@@ -123,8 +123,8 @@ public class BoardController extends Path {
         printWriter.println(jsonObject);
         printWriter.flush();
 
-//        System.out.println("url : "+fileUrl);
-//        System.out.println("ckUploadPath : "+ckUploadPath);
+        System.out.println("url : "+fileUrl);
+        System.out.println("ckUploadPath : "+ckUploadPath);
     }
 
     @GetMapping(BOARD+VIEW)
